@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/header_footer.css">
+    <title>Empresa</title>
+</head>
+<body>
+<div id="header"></div>
+
+<!-- SECCIÓN INFO EMPRESA -->
+<section class="company-section">
+    <div class="company-bg"></div>
+    <div class="company-container">
+        <div class="about-hero reveal-fade">
+            <h1 class="company-title">Sobre nosotros</h1>
+        </div>
+
+        <h2 class="section-subtitle reveal-up">Socios</h2>
+
+        <div class="partners-grid">
+            <article class="partner-item reveal-up delay-1">
+                <img src="styles/img/empresa/Toni-Sbert.jpg" alt="Antonio Mª Sbert Muntaner" class="partner-photo">
+                <div class="partner-info">
+                    <h3 class="partner-name">Antonio Mª Sbert Muntaner</h3>
+                    <div class="partner-line"></div>
+                    <p class="partner-role">
+                        Licenciado en Ciencias Económicas y Empresariales y Auditor de Cuentas inscrito en el ROAC 16343
+                    </p>
+                </div>
+            </article>
+
+            <article class="partner-item reveal-up delay-2">
+                <img src="styles/img/empresa/Jaume-Riutort.jpg" alt="Jaume Riutort Crespí" class="partner-photo">
+                <div class="partner-info">
+                    <h3 class="partner-name">Jaume Riutort Crespí</h3>
+                    <div class="partner-line"></div>
+                    <p class="partner-role">
+                        Licenciado en Ciencias Económicas y Empresariales y Auditor de Cuentas inscrito en el ROAC 16313
+                    </p>
+                </div>
+            </article>
+
+            <article class="partner-item reveal-up delay-3">
+                <img src="styles/img/empresa/Xavier-Sanchez.jpg" alt="Xavier Sánchez Ibáñez" class="partner-photo">
+                <div class="partner-info">
+                    <h3 class="partner-name">Xavier Sánchez Ibáñez</h3>
+                    <div class="partner-line"></div>
+                    <p class="partner-role">
+                        Licenciado en Ciencias Económicas y Empresariales y Auditor de Cuentas inscrito en el ROAC 22451
+                    </p>
+                </div>
+            </article>
+
+            <article class="partner-item reveal-up delay-4">
+                <img src="styles/img/empresa/Miquel-Ferrer.jpg" alt="Miquel Ferrer Ferrer" class="partner-photo">
+                <div class="partner-info">
+                    <h3 class="partner-name">Miquel Ferrer Ferrer</h3>
+                    <div class="partner-line"></div>
+                    <p class="partner-role">
+                        Licenciado en Ciencias Económicas y Empresariales y Auditor de Cuentas inscrito en el ROAC 22450
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="company-band reveal-fade">
+    <div class="company-band-content">
+        <p><b>ADN SBERT AUDIT</b> es una firma consolidada desde 1991 por sus socios fundadores junto a un excelente equipo de profesionales que reúnen más de 30 años de experiencia en el sector de la auditoría y consultoría.</p>
+        <p>El equipo humano de <b>ADN SBERT AUDIT</b> se caracteriza por el compromiso firme de cumplir con las expectativas del cliente manteniendo un trato cercano y honesto con el fin de otorgar la máxima profesionalidad y calidad a los trabajos encomendados.</p>
+    </div>
+</section>
+
+<section class="member-section reveal-scale">
+    <div class="member-container">
+        <h2 class="member-title">Miembros de</h2>
+        <a href="https://adngrm.com/" target="_blank" rel="noopener noreferrer"><img src="styles/img/Audit_positivo.jpg" alt="Logo ADNGRM" class="member-logo"></a>
+    </div>
+</section>
+
+<div id="footer"></div>
+
+<script src="js/include.js"></script>
+<script src="js/header.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const animatedItems = document.querySelectorAll(".reveal-up, .reveal-fade, .reveal-scale");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.18
+    });
+
+    animatedItems.forEach((item) => {
+        observer.observe(item);
+    });
+});
+</script>
+</body>
+</html>

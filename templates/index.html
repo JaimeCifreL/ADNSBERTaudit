@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/combined_templates.css">
+    <title>ADNSbert</title>
+</head>
+<body>
+
+<div id="header"></div>
+
+<main>
+    <!-- SECCIÓN 1 -->
+
+    <section class="hero">
+        <div class="top-band"></div>
+
+        <div class="hero-content">
+            <img src="styles/img/ADNSBERT.png" alt="Logo ADNSBERT" class="hero-logo">
+            <h1 class="hero-title">Calidad y dilatada experiencia profesional</h1>
+        </div>
+    </section>
+
+<section class="band-section reveal-band reveal-left">
+    <a href="empresa.html" class="band-button">CONÓCENOS</a>
+    <div class="band-image">
+        <img src="styles/img/index/banda1.webp" alt="Imagen banda 1">
+    </div>
+    <div class="band-overlay"></div>
+</section>
+
+<section class="band-section reverse reveal-band reveal-right">
+    <a href="contacto.html" class="band-button">CONTÁCTANOS</a>
+    <div class="band-image">
+        <img src="styles/img/index/banda2.jpg" alt="Imagen banda 2">
+    </div>
+    <div class="band-overlay"></div>
+</section>
+</main>
+
+<div id="footer"></div>
+
+<script src="js/include.js"></script>
+<script src="js/header.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const bands = document.querySelectorAll(".reveal-band");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.9
+    });
+
+    bands.forEach((band) => {
+        observer.observe(band);
+    });
+});
+</script>
+</body>
+</html>
