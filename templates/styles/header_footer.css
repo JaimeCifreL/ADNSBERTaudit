@@ -46,16 +46,40 @@
 
 /* make logo image fit header and be responsive */
 .logo img {
-    max-height: 30px;
+    max-height: 40px;
     width: auto;
     display: block;
+}
+
+.adngrm-logo {
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition:
+        font-size 0.35s ease,
+        transform 0.35s ease;
+}
+
+.adngrm-logo img {
+    max-height: 40px;
+    width: auto;
+    display: block;
+}
+
+.adngrm-logo {
+    margin-left: auto;
+    order: 1;
+}
+
+.nav {
+    order: 0;
 }
 
 /* nav */
 .nav {
     display: flex;
     gap: 28px;
-    margin-left: auto; /* empuja la navegación a la derecha dejando el logo a la izquierda */
+    align-items: center;
     transition: gap 0.35s ease;
 }
 
@@ -152,6 +176,16 @@
 @media (max-width: 900px) {
     .header-container {
         align-items: center;
+    }
+
+    .adngrm-logo {
+            display: none;
+    }
+
+    /* en móvil, restablecer orden y margen para que apilen correctamente */
+    .logo {
+        margin-left: 0;
+        order: 0;
     }
 
     .mobile-menu-toggle {
