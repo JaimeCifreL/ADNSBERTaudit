@@ -3,84 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/header_footer.css">
+    <link rel="stylesheet" href="styles/css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Empresa</title>
 </head>
 <body>
 <div id="header"></div>
 
-<!-- SECCIÓN INFO EMPRESA -->
-<section class="company-section">
-    <div class="company-bg"></div>
-    <div class="company-container">
-        <div class="about-hero reveal-fade">
-            <h1 class="company-title">Sobre nosotros</h1>
+<main>
+    <section class="story-switch-section">
+        <div class="story-switch-container reveal-fade">
+
+            <div class="story-panel story-panel-about is-active" id="aboutPanel">
+                <div class="story-panel-inner story-panel-inner-about">
+                    <div class="about-split-layout">
+                        <div class="about-copy">
+                            <p class="section-kicker about-kicker">Quiénes somos</p>
+                            <h2 class="section-title about-title">Nuestra Firma</h2>
+
+                            <p class="about-lead">
+                                Una extensa trayectoria comprometidos en ofrecer la máxima calidad a nuestros clientes.
+                            </p>
+
+                            <p class="about-text">
+                                ADN SBERT AUDIT dispone de un gran número de profesionales con amplia experiencia en auditoría y consultoría, comprometidos con un servicio cercano, riguroso y orientado a la excelencia.
+                            </p>
+
+                            <p class="about-text">
+                                Nuestra forma de trabajar combina criterio técnico, proximidad y una clara orientación a las necesidades reales de cada cliente, manteniendo siempre los más altos estándares de calidad profesional.
+                            </p>
+                        </div>
+
+                        <div class="about-visual">
+                            <div class="about-partner-stage" id="aboutPartnerStage">
+                                <article class="about-partner-slide is-active">
+                                    <img src="styles/img/empresa/Toni-Sbert.jpg" alt="Antonio Mª Sbert Muntaner" class="about-partner-photo">
+                                    <div class="about-partner-tag">
+                                        <span class="about-partner-name">Antonio Mª Sbert Muntaner</span>
+                                    </div>
+                                </article>
+
+                                <article class="about-partner-slide">
+                                    <img src="styles/img/empresa/Jaume-Riutort.jpg" alt="Jaume Riutort Crespí" class="about-partner-photo">
+                                    <div class="about-partner-tag">
+                                        <span class="about-partner-name">Jaume Riutort Crespí</span>
+                                    </div>
+                                </article>
+
+                                <article class="about-partner-slide">
+                                    <img src="styles/img/empresa/Xavier-Sanchez.jpg" alt="Xavier Sánchez Ibáñez" class="about-partner-photo">
+                                    <div class="about-partner-tag">
+                                        <span class="about-partner-name">Xavier Sánchez Ibáñez</span>
+                                    </div>
+                                </article>
+
+                                <article class="about-partner-slide">
+                                    <img src="styles/img/empresa/Miquel-Ferrer.jpg" alt="Miquel Ferrer Ferrer" class="about-partner-photo">
+                                    <div class="about-partner-tag">
+                                        <span class="about-partner-name">Miquel Ferrer Ferrer</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="story-toggle-btn" id="storyToggleBtn" type="button">
+                    Mira nuestra trayectoria
+                </button>
+            </div>
+
+            <div class="story-panel story-panel-timeline" id="timelinePanel">
+                <div class="story-panel-inner">
+                    <div class="section-heading story-heading">
+                        <p class="section-kicker">Trayectoria</p>
+                        <h2 class="section-title">Historia de la Firma</h2>
+                    </div>
+
+                    <div class="timeline-scroll-wrapper">
+                        <div class="timeline-track" id="timelineTrack"></div>
+                    </div>
+                </div>
+
+                <button class="story-toggle-btn is-back" id="storyBackBtn" type="button">
+                    Quiénes somos
+                </button>
+            </div>
+
+        </div>
+    </section>
+    <section class="company-section">
+        <div class="company-bg"></div>
+
+        <div class="company-container">
+            <div class="section-heading section-heading-left about-heading reveal-fade">
+                <p class="section-kicker">Equipo</p>
+                <h1 class="section-title section-title-left">Nuestros Profesionales</h1>
+            </div>
+
+            <div class="partners-grid">
+                <article class="partner-item reveal-up delay-1">
+                    <img src="styles/img/empresa/Toni-Sbert.jpg" alt="Antonio Mª Sbert Muntaner" class="partner-photo">
+                    <div class="partner-info">
+                        <h3 class="partner-name">Antonio Mª Sbert Muntaner</h3>
+                        <div class="partner-line"></div>
+                        <p class="partner-role">
+                            Licenciado en Ciencias Económicas y Empresariales y Auditor de Cuentas inscrito en el ROAC 16343
+                        </p>
+                    </div>
+                </article>
+
+                <article class="partner-item reveal-up delay-2">
+                    <img src="styles/img/empresa/Jaume-Riutort.jpg" alt="Jaume Riutort Crespí" class="partner-photo">
+                    <div class="partner-info">
+                        <h3 class="partner-name">Jaume Riutort Crespí</h3>
+                        <div class="partner-line"></div>
+                        <p class="partner-role">
+                            Licenciado en Ciencias Económicas y Empresariales y Auditor de Cuentas inscrito en el ROAC 16313
+                        </p>
+                    </div>
+                </article>
+
+                <article class="partner-item reveal-up delay-3">
+                    <img src="styles/img/empresa/Xavier-Sanchez.jpg" alt="Xavier Sánchez Ibáñez" class="partner-photo">
+                    <div class="partner-info">
+                        <h3 class="partner-name">Xavier Sánchez Ibáñez</h3>
+                        <div class="partner-line"></div>
+                        <p class="partner-role">
+                            Licenciado en Ciencias Económicas y Empresariales y Auditor de Cuentas inscrito en el ROAC 22451
+                        </p>
+                    </div>
+                </article>
+
+                <article class="partner-item reveal-up delay-4">
+                    <img src="styles/img/empresa/Miquel-Ferrer.jpg" alt="Miquel Ferrer Ferrer" class="partner-photo">
+                    <div class="partner-info">
+                        <h3 class="partner-name">Miquel Ferrer Ferrer</h3>
+                        <div class="partner-line"></div>
+                        <p class="partner-role">
+                            Licenciado en Ciencias Económicas y Empresariales y Auditor de Cuentas inscrito en el ROAC 22450
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="member-section reveal-scale">
+        <div class="section-heading">
+            <p class="section-kicker">Pertenencia</p>
+            <h2 class="section-title">Miembros de</h2>
         </div>
 
-        <h2 class="section-subtitle reveal-up">Socios</h2>
-
-        <div class="partners-grid">
-            <article class="partner-item reveal-up delay-1">
-                <img src="styles/img/empresa/Toni-Sbert.jpg" alt="Antonio Mª Sbert Muntaner" class="partner-photo">
-                <div class="partner-info">
-                    <h3 class="partner-name">Antonio Mª Sbert Muntaner</h3>
-                    <div class="partner-line"></div>
-                    <p class="partner-role">
-                        Licenciado en Ciencias Económicas y Empresariales y Auditor de Cuentas inscrito en el ROAC 16343
-                    </p>
-                </div>
-            </article>
-
-            <article class="partner-item reveal-up delay-2">
-                <img src="styles/img/empresa/Jaume-Riutort.jpg" alt="Jaume Riutort Crespí" class="partner-photo">
-                <div class="partner-info">
-                    <h3 class="partner-name">Jaume Riutort Crespí</h3>
-                    <div class="partner-line"></div>
-                    <p class="partner-role">
-                        Licenciado en Ciencias Económicas y Empresariales y Auditor de Cuentas inscrito en el ROAC 16313
-                    </p>
-                </div>
-            </article>
-
-            <article class="partner-item reveal-up delay-3">
-                <img src="styles/img/empresa/Xavier-Sanchez.jpg" alt="Xavier Sánchez Ibáñez" class="partner-photo">
-                <div class="partner-info">
-                    <h3 class="partner-name">Xavier Sánchez Ibáñez</h3>
-                    <div class="partner-line"></div>
-                    <p class="partner-role">
-                        Licenciado en Ciencias Económicas y Empresariales y Auditor de Cuentas inscrito en el ROAC 22451
-                    </p>
-                </div>
-            </article>
-
-            <article class="partner-item reveal-up delay-4">
-                <img src="styles/img/empresa/Miquel-Ferrer.jpg" alt="Miquel Ferrer Ferrer" class="partner-photo">
-                <div class="partner-info">
-                    <h3 class="partner-name">Miquel Ferrer Ferrer</h3>
-                    <div class="partner-line"></div>
-                    <p class="partner-role">
-                        Licenciado en Ciencias Económicas y Empresariales y Auditor de Cuentas inscrito en el ROAC 22450
-                    </p>
-                </div>
-            </article>
+        <div class="member-container">
+            <a href="https://adngrm.com/" target="_blank" rel="noopener noreferrer">
+                <img src="styles/img/Audit_positivo.jpg" alt="Logo ADNGRM" class="member-logo">
+            </a>
         </div>
-    </div>
-</section>
-
-<section class="company-band reveal-fade">
-    <div class="company-band-content">
-        <p><b>ADN SBERT AUDIT</b> es una firma consolidada desde 1991 por sus socios fundadores junto a un excelente equipo de profesionales que reúnen más de 30 años de experiencia en el sector de la auditoría y consultoría.</p>
-        <p>El equipo humano de <b>ADN SBERT AUDIT</b> se caracteriza por el compromiso firme de cumplir con las expectativas del cliente manteniendo un trato cercano y honesto con el fin de otorgar la máxima profesionalidad y calidad a los trabajos encomendados.</p>
-    </div>
-</section>
-
-<section class="member-section reveal-scale">
-    <div class="member-container">
-        <h2 class="member-title">Miembros de</h2>
-        <a href="https://adngrm.com/" target="_blank" rel="noopener noreferrer"><img src="styles/img/Audit_positivo.jpg" alt="Logo ADNGRM" class="member-logo"></a>
-    </div>
-</section>
+    </section>
+</main>
 
 <div id="footer"></div>
 
@@ -90,11 +172,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const animatedItems = document.querySelectorAll(".reveal-up, .reveal-fade, .reveal-scale");
 
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("is-visible");
-                observer.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
             }
         });
     }, {
@@ -102,9 +184,155 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     animatedItems.forEach((item) => {
-        observer.observe(item);
+        revealObserver.observe(item);
     });
+
+    const aboutPanel = document.getElementById("aboutPanel");
+    const timelinePanel = document.getElementById("timelinePanel");
+    const storyToggleBtn = document.getElementById("storyToggleBtn");
+    const storyBackBtn = document.getElementById("storyBackBtn");
+
+    const aboutSlides = Array.from(document.querySelectorAll(".about-partner-slide"));
+    let aboutSlideIndex = 0;
+    let aboutSliderInterval = null;
+
+    function showAboutSlide(index) {
+        aboutSlides.forEach((slide, i) => {
+            slide.classList.toggle("is-active", i === index);
+        });
+    }
+
+    function startAboutSlider() {
+        if (!aboutSlides.length) return;
+
+        stopAboutSlider();
+        aboutSliderInterval = setInterval(() => {
+            aboutSlideIndex = (aboutSlideIndex + 1) % aboutSlides.length;
+            showAboutSlide(aboutSlideIndex);
+        }, 7000);
+    }
+
+    function stopAboutSlider() {
+        if (aboutSliderInterval) {
+            clearInterval(aboutSliderInterval);
+            aboutSliderInterval = null;
+        }
+    }
+
+    const timelineTrack = document.getElementById("timelineTrack");
+    const timelineWrapper = document.querySelector(".timeline-scroll-wrapper");
+    let updateTimelineItems = null;
+
+    if (timelineTrack && timelineWrapper) {
+        fetch("js/timeline.json")
+            .then(response => response.json())
+            .then(events => {
+                timelineTrack.innerHTML = events.map((event) => `
+                    <article class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-year">${event.year}</span>
+                            <p class="timeline-text">${event.text}</p>
+                        </div>
+                    </article>
+                `).join("");
+
+                const timelineItems = Array.from(timelineTrack.querySelectorAll(".timeline-item"));
+
+                updateTimelineItems = function () {
+                    const wrapperRect = timelineWrapper.getBoundingClientRect();
+                    const visibleStart = wrapperRect.left + wrapperRect.width * 0.10;
+                    const visibleEnd = wrapperRect.left + wrapperRect.width * 0.90;
+                    const visibleCenter = wrapperRect.left + wrapperRect.width / 2;
+                    const halfVisibleRange = (visibleEnd - visibleStart) / 2;
+
+                    timelineItems.forEach((item) => {
+                        const itemRect = item.getBoundingClientRect();
+                        const itemCenter = itemRect.left + itemRect.width / 2;
+                        const isInside = itemCenter >= visibleStart && itemCenter <= visibleEnd;
+
+                        if (isInside) {
+                            item.classList.add("is-visible");
+                        } else {
+                            item.classList.remove("is-visible");
+                            item.classList.remove("is-focus");
+                            item.style.opacity = "";
+                            item.style.transform = "";
+                            item.style.filter = "";
+                            return;
+                        }
+
+                        const distanceToCenter = Math.abs(itemCenter - visibleCenter);
+                        const proximity = Math.max(0, 1 - (distanceToCenter / halfVisibleRange));
+
+                        const scale = 0.92 + (proximity * 0.12);
+                        const opacity = 0.45 + (proximity * 0.55);
+                        let blur = 0;
+
+                        if (proximity < 0.25) {
+                            const edgeFactor = (0.25 - proximity) / 0.25;
+                            blur = edgeFactor * 0.5;
+                        }
+
+                        item.style.opacity = opacity.toFixed(3);
+                        item.style.transform = `scale(${scale.toFixed(3)})`;
+                        item.style.filter = `blur(${Math.max(0, blur).toFixed(2)}px)`;
+
+                        if (proximity > 0.72) {
+                            item.classList.add("is-focus");
+                        } else {
+                            item.classList.remove("is-focus");
+                        }
+                    });
+                };
+
+                updateTimelineItems();
+
+                timelineWrapper.addEventListener("scroll", updateTimelineItems);
+                window.addEventListener("resize", updateTimelineItems);
+
+                timelineWrapper.addEventListener("wheel", function (e) {
+                    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                        e.preventDefault();
+                        timelineWrapper.scrollLeft += e.deltaY;
+                    }
+                }, { passive: false });
+            })
+            .catch(error => {
+                console.error("Error cargando timeline.json:", error);
+            });
+    }
+
+    function showAboutPanel() {
+        if (aboutPanel) aboutPanel.classList.add("is-active");
+        if (timelinePanel) timelinePanel.classList.remove("is-active");
+        startAboutSlider();
+    }
+
+    function showTimelinePanel() {
+        if (aboutPanel) aboutPanel.classList.remove("is-active");
+        if (timelinePanel) timelinePanel.classList.add("is-active");
+        stopAboutSlider();
+
+        setTimeout(() => {
+            if (typeof updateTimelineItems === "function") {
+                updateTimelineItems();
+            }
+        }, 220);
+    }
+
+    if (storyToggleBtn) {
+        storyToggleBtn.addEventListener("click", showTimelinePanel);
+    }
+
+    if (storyBackBtn) {
+        storyBackBtn.addEventListener("click", showAboutPanel);
+    }
+
+    showAboutSlide(0);
+    showAboutPanel();
 });
 </script>
+
 </body>
 </html>
