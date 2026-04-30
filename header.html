@@ -1,0 +1,162 @@
+<header class="site-header" id="siteHeader">
+    <div class="header-container">
+        <div class="logo"><a href="index.html"><img src="styles\img\logo_header.png" alt="ADNSBERT Logo"></a></div>
+
+        <nav class="nav">
+
+            <div class="nav-item dropdown" id="dropdownQuienes">
+                <a href="#" id="dropdownToggle" class="nav-link-dropdown">
+                    Quiénes somos <span class="dropdown-arrow">▾</span>
+                </a>
+
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="nuestra_firma.html">Nuestra firma</a>
+                    <a href="profesionales.html">Nuestros profesionales</a>
+                    <a href="historia.html">Historia de la firma</a>
+                </div>
+            </div>
+
+            <div class="nav-item servicios-dropdown" id="dropdownServicios">
+                <a href="#" id="serviciosToggle" class="nav-link-dropdown">
+                    Servicios <span class="dropdown-arrow">▾</span>
+                </a>
+
+                <div class="servicios-panel" id="serviciosPanel">
+                    <ul class="servicios-lista">
+                        <li><button type="button" class="servicio-opcion active" data-servicio="auditoria">Auditoría</button></li>
+                        <li><button type="button" class="servicio-opcion" data-servicio="assurance">Assurance</button></li>
+                        <li><button type="button" class="servicio-opcion" data-servicio="consultoria">Consultoría</button></li>
+                        <li><button type="button" class="servicio-opcion" data-servicio="forensic">Forensic</button></li>
+                    </ul>
+
+                    <ul class="subopciones-lista active" data-contenido="auditoria">
+                        <li><a href="#">Auditoría de cuentas</a></li>
+                        <li><a href="#">Revisión limitada</a></li>
+                        <li><a href="#">Informes especiales</a></li>
+                        <li><a href="#">Auditoría interna</a></li>
+                    </ul>
+
+                    <ul class="subopciones-lista" data-contenido="assurance">
+                        <li><a href="#">Due diligence</a></li>
+                        <li><a href="#">Verificación ESG</a></li>
+                        <li><a href="#">Control interno</a></li>
+                        <li><a href="#">Reporting financiero</a></li>
+                    </ul>
+
+                    <ul class="subopciones-lista" data-contenido="consultoria">
+                        <li><a href="#">Consultoría contable</a></li>
+                        <li><a href="#">Consultoría fiscal</a></li>
+                        <li><a href="#">Procesos financieros</a></li>
+                        <li><a href="#">Planes de viabilidad</a></li>
+                    </ul>
+
+                    <ul class="subopciones-lista" data-contenido="forensic">
+                        <li><a href="#">Investigación financiera</a></li>
+                        <li><a href="#">Fraude empresarial</a></li>
+                        <li><a href="#">Litigios económicos</a></li>
+                        <li><a href="#">Pericial contable</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a href="trabaja_con_nosotros.html">Trabaja con nosotros</a>
+
+        </nav>
+        <div class="adngrm-logo"><p style="font-size: small; font-weight: 100; text-align: center;">Miembros de </p><a href="https://www.adngrm.com" target="_blank"><img src="styles\img\adngrm-white.png" alt="ADNSBERT Logo"></a></div>
+
+    </div>
+</header>
+<style>
+@media (max-width: 768px) {
+    #dropdownMenu { display: none !important; }
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.getElementById("siteHeader");
+    const quienes = document.getElementById("dropdownQuienes");
+    const quienesToggle = document.getElementById("dropdownToggle");
+
+    const servicios = document.getElementById("dropdownServicios");
+    const serviciosToggle = document.getElementById("serviciosToggle");
+    const opciones = document.querySelectorAll(".servicio-opcion");
+    const contenidos = document.querySelectorAll(".subopciones-lista");
+
+    function isMobile() {
+        return window.matchMedia("(max-width: 900px)").matches;
+    }
+
+    function closeAllDropdowns() {
+        quienes?.classList.remove("open");
+        servicios?.classList.remove("open");
+        header?.classList.remove("servicios-open");
+    }
+
+    if (quienes && quienesToggle) {
+        function syncQuienesLink() {
+            quienesToggle.setAttribute("href", isMobile() ? "empresa.html" : "#");
+        }
+
+        syncQuienesLink();
+
+        quienesToggle.addEventListener("click", function (e) {
+            if (isMobile()) {
+                return;
+            }
+
+            e.preventDefault();
+            const willOpen = !quienes.classList.contains("open");
+            closeAllDropdowns();
+            quienes.classList.toggle("open", willOpen);
+        });
+
+        window.addEventListener("resize", syncQuienesLink);
+    }
+
+    if (servicios && serviciosToggle) {
+        serviciosToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const willOpen = !servicios.classList.contains("open");
+            closeAllDropdowns();
+            servicios.classList.toggle("open", willOpen);
+            header?.classList.toggle("servicios-open", willOpen);
+        });
+
+        opciones.forEach(function (opcion) {
+            opcion.addEventListener("click", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const servicio = this.dataset.servicio;
+
+                opciones.forEach(function (btn) {
+                    btn.classList.remove("active");
+                });
+
+                this.classList.add("active");
+
+                contenidos.forEach(function (contenido) {
+                    contenido.classList.remove("active");
+
+                    if (contenido.dataset.contenido === servicio) {
+                        contenido.classList.add("active");
+                    }
+                });
+            });
+        });
+    }
+
+    document.addEventListener("click", function (e) {
+        if (!header || !header.contains(e.target)) {
+            closeAllDropdowns();
+        }
+    });
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            closeAllDropdowns();
+        }
+    });
+});
+</script>

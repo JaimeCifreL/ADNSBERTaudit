@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADNSbert</title>
+    <link rel="stylesheet" href="styles/header_footer.css">
+    <link rel="stylesheet" href="styles/css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="header"></div>
+
+<main>
+    <section class="profesionales-section">
+        <div class="profesionales-panel">
+            <div class="profesionales-panel-inner">
+                <div class="profesionales-split-layout">
+                    <div class="profesionales-copy">
+                        <p class="hero-sequence-kicker">ADN Sbert</p>
+                        <h2 class="section-title about-title" style="color: rgb(255, 255, 255);">
+                            <strong>Nuestros Profesionales</strong>
+                        </h2>
+                        <p style="color: white; font: 1em sans-serif;">
+                            Disponemos de una amplia plantilla altamente cualificada y con una gran experiencia en los ámbitos de la auditoría, consultoría e informática.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="company-section">
+        <div class="company-bg"></div>
+
+        <div class="company-container">
+            <div class="section-description reveal-fade">
+                
+            </div>
+
+            <div class="section-heading section-heading-left about-heading reveal-fade">
+                <h1 class="section-title section-title-left">Dirección</h1>
+            </div>
+
+            <div class="partners-grid" id="direccionGrid"></div>
+
+            <div class="section-heading section-heading-left about-heading reveal-fade">
+                <h1 class="section-title section-title-left">Auditoría &amp; Assurance</h1>
+            </div>
+
+            <div class="partners-grid" id="auditoriaGrid"></div>
+        </div>
+    </section>
+    <section class="professional-detail-section" id="professionalDetail" hidden>
+        <div class="professional-detail-container">
+            <button class="detail-back-btn" id="backToProfessionals">
+                ← Volver a profesionales
+            </button>
+
+            <div class="professional-detail-card">
+                <div class="professional-detail-image-wrap">
+                    <img id="detailImage" src="" alt="" class="professional-detail-image">
+                </div>
+
+                <div class="professional-detail-info">
+                    <p class="hero-sequence-kicker" id="detailArea"></p>
+                    <h1 id="detailName"></h1>
+                    <p id="detailRole"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div id="footer"></div>
+
+<script src="js/include.js"></script>
+<script src="js/header.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const animatedItems = document.querySelectorAll(".reveal-up, .reveal-fade, .reveal-scale");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.18
+    });
+
+    animatedItems.forEach((item) => revealObserver.observe(item));
+
+    const direccionGrid = document.getElementById("direccionGrid");
+    const auditoriaGrid = document.getElementById("auditoriaGrid");
+    const mainCompanySection = document.querySelector(".company-section");
+    const professionalDetail = document.getElementById("professionalDetail");
+    const backToProfessionals = document.getElementById("backToProfessionals");
+
+    const detailImage = document.getElementById("detailImage");
+    const detailName = document.getElementById("detailName");
+    const detailRole = document.getElementById("detailRole");
+    const detailArea = document.getElementById("detailArea");
+
+    function openProfessionalDetail(partner) {
+        detailImage.src = partner.image;
+        detailImage.alt = partner.alt || partner.name;
+        detailName.textContent = partner.name;
+        detailRole.textContent = partner.role || "Sin información adicional disponible.";
+        detailArea.textContent = partner.area === "direccion" ? "Dirección" : "Auditoría & Assurance";
+
+        mainCompanySection.hidden = true;
+        professionalDetail.hidden = false;
+
+        window.scrollTo({
+            top: professionalDetail.offsetTop - 70,
+            behavior: "smooth"
+        });
+    }
+
+    backToProfessionals.addEventListener("click", () => {
+        professionalDetail.hidden = true;
+        mainCompanySection.hidden = false;
+
+        window.scrollTo({
+            top: mainCompanySection.offsetTop - 70,
+            behavior: "smooth"
+        });
+    });
+
+    if (!direccionGrid || !auditoriaGrid) {
+        console.error("No se encontraron direccionGrid o auditoriaGrid");
+        return;
+    }
+
+    function renderPartners(partners, container) {
+        container.innerHTML = partners.map((partner, index) => {
+            const delayClass = `delay-${(index % 4) + 1}`;
+
+            return `
+                <article class="partner-item reveal-up ${delayClass}" data-name="${partner.name}">
+                    <img src="${partner.image}" alt="${partner.alt || partner.name}" class="partner-photo">
+                    <div class="partner-info">
+                        <h3 class="partner-name">${partner.name}</h3>
+                        <div class="partner-line"></div>
+                    </div>
+                </article>
+            `;
+        }).join("");
+
+        container.querySelectorAll(".partner-item").forEach((item) => {
+            item.addEventListener("click", () => {
+                const selectedName = item.dataset.name;
+                const selectedPartner = partners.find(partner => partner.name === selectedName);
+
+                if (selectedPartner) {
+                    openProfessionalDetail(selectedPartner);
+                }
+            });
+        });
+
+        const newAnimatedItems = container.querySelectorAll(".reveal-up, .reveal-fade, .reveal-scale");
+        newAnimatedItems.forEach((item) => revealObserver.observe(item));
+    }
+
+    async function loadPartners() {
+        try {
+            const response = await fetch("js/partners.json", { cache: "no-store" });
+
+            console.log("Fetch partners.json status:", response.status);
+
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+
+            const partners = await response.json();
+            console.log("Partners cargados:", partners);
+
+            const direccion = partners.filter(partner => partner.area === "direccion");
+            const auditoria = partners.filter(partner => partner.area === "auditoria");
+
+            console.log("Dirección:", direccion);
+            console.log("Auditoría:", auditoria);
+
+            renderPartners(direccion, direccionGrid);
+            renderPartners(auditoria, auditoriaGrid);
+
+        } catch (error) {
+            console.error("Error cargando partners.json:", error);
+            direccionGrid.innerHTML = "<p>No se pudo cargar Dirección.</p>";
+            auditoriaGrid.innerHTML = "<p>No se pudo cargar Auditoría &amp; Assurance.</p>";
+        }
+    }
+
+    loadPartners();
+
+    const partnerModal = document.getElementById("partnerModal");
+    const partnerModalClose = document.getElementById("partnerModalClose");
+    const partnerModalImage = document.getElementById("partnerModalImage");
+    const partnerModalName = document.getElementById("partnerModalName");
+    const partnerModalRole = document.getElementById("partnerModalRole");
+
+    function openPartnerModal(partner) {
+        partnerModalImage.src = partner.image;
+        partnerModalImage.alt = partner.alt || partner.name;
+        partnerModalName.textContent = partner.name;
+        partnerModalRole.textContent = partner.role || "Información no disponible.";
+
+        partnerModal.classList.add("is-open");
+        partnerModal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closePartnerModal() {
+        partnerModal.classList.remove("is-open");
+        partnerModal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+
+    partnerModalClose.addEventListener("click", closePartnerModal);
+
+    partnerModal.addEventListener("click", function (event) {
+        if (event.target.classList.contains("partner-modal-backdrop")) {
+            closePartnerModal();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && partnerModal.classList.contains("is-open")) {
+            closePartnerModal();
+        }
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADNSbert | Historia de la Firma</title>
+
+    <link rel="stylesheet" href="styles/header_footer.css">
+    <link rel="stylesheet" href="styles/css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+    /* ===== MEJORAS HISTORIA FIRMA ===== */
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: linear-gradient(180deg, #f8fbff 0%, #f6f9fd 60%);
+}
+
+/* Nueva sección superior */
+.story-hero-section {
+    position: relative;
+    min-height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 72px 24px 64px;
+    overflow: hidden;
+    background: transparent;
+}
+
+.story-hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(255,255,255,0.76), rgba(246,249,253,0.36)),
+        url("img/logo_sobre_pared.png") center right / cover no-repeat;
+    z-index: 0;
+}
+
+.story-hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 30%, rgba(255,102,0,0.12), transparent 26%),
+        radial-gradient(circle at 82% 70%, rgba(37,99,235,0.10), transparent 28%);
+}
+
+.story-switch-section {
+    position: relative;
+    background: url("styles/img/fondo_historia.png") center bottom / cover no-repeat;
+    overflow: visible;
+}
+
+.story-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    text-align: center;
+    padding: 34px 32px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid rgba(15,23,42,0.08);
+    box-shadow: 0 18px 48px rgba(16, 42, 15, 0.07);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.story-hero-content h1 {
+    font-size: clamp(2rem, 4vw, 3.6rem);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.045em;
+    color: #0f172a;
+    margin: 0;
+}
+
+.story-hero-content p {
+    max-width: 680px;
+    margin: 22px auto 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #475569;
+}
+
+.story-panel-inner {
+    max-width: 1280px;
+    padding-top: 64px;
+}
+
+.story-heading {
+    margin-bottom: 20px;
+}
+
+.story-heading .section-title {
+    color: #0f172a !important;
+    letter-spacing: 0.08em;
+}
+
+.story-heading .section-title::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 2px;
+    margin: 18px auto 0;
+    border-radius: 999px;
+    background: linear-gradient(to right, #ff6600, rgba(255,102,0,0.16));
+}
+
+/* Timeline más moderna */
+.timeline-scroll-wrapper {
+    min-height: 300px;
+    max-height: none;
+    padding-top: 38px;
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+.timeline-track {
+    height: 250px;
+}
+
+.timeline-card {
+    border-radius: 20px;
+    background: rgba(255,255,255,0.86);
+    border: 1px solid rgba(15,23,42,0.07);
+    box-shadow: 0 14px 34px rgba(21, 56, 136, 0.055);
+}
+
+.timeline-year {
+    color: #003eb1;
+}
+
+.timeline-dot {
+    background: #ff6600;
+    box-shadow:
+        0 0 0 4px rgba(255, 102, 0, 0.486),
+        0 0 0 11px rgba(255,102,0,0.05);
+}
+
+.timeline-track::before {
+    background: linear-gradient(
+        to right,
+        rgba(255,102,0,0.04),
+        rgba(255,102,0,0.32),
+        rgba(255,102,0,0.32),
+        rgba(0, 26, 255, 0.04)
+    );
+}
+
+.story-values-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.story-value-card {
+    padding: 28px 24px;
+    border-radius: 24px;
+    background: #ffffff;
+    border: 1px solid rgba(15, 42, 16, 0.07);
+    box-shadow: 0 12px 34px rgba(185, 216, 12, 0.045);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.story-value-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,102,0,0.18);
+    box-shadow: 0 18px 42px rgba(15,23,42,0.075);
+}
+
+.story-value-card span {
+    display: inline-block;
+    margin-bottom: 18px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #ff6600;
+}
+
+.story-value-card h3 {
+    margin: 0 0 12px;
+    font-size: 1.12rem;
+    color: #0f172a;
+}
+
+.story-value-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: #5b6576;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .story-values-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .story-hero-section {
+        min-height: auto;
+        padding: 42px 16px;
+    }
+
+    .story-hero-content {
+        padding: 26px 20px;
+        border-radius: 22px;
+    }
+
+    .story-panel-inner {
+        padding: 38px 18px 92px;
+    }
+
+    .timeline-scroll-wrapper {
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
+
+    .timeline-track {
+        height: 360px;
+    }
+
+    .story-values-section {
+        padding: 24px 16px 58px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div id="header"></div>
+<main>
+
+<section class="story-switch-section">
+    <div class="story-switch-container reveal-fade">
+        <div class="story-panel-inner">
+
+            <div class="section-heading story-heading">
+                <h2 class="section-title">Historia de la firma</h2>
+ 
+            </div>
+
+            <div class="timeline-scroll-wrapper">
+                <div class="timeline-track" id="timelineTrack"></div>
+            </div>
+
+            <button class="timeline-arrow timeline-arrow--left" aria-label="Desplazar a la izquierda" type="button">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <button class="timeline-arrow timeline-arrow--right" aria-label="Desplazar a la derecha" type="button">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <a href="nuestra_firma.html" class="story-toggle-btn is-back">
+                Quiénes somos
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<section class="story-hero-section reveal-fade">
+
+    <div class="story-hero-content">
+        <span class="section-kicker">Nuestra trayectoria</span>
+        <h1>Título</h1>
+        <p>
+            Conoce los principales hitos que han marcado la evolución de ADNSbert
+            y la forma en la que hemos consolidado nuestra manera de trabajar.
+        </p>
+    </div>
+</section>
+
+</main>
+<div id="footer"></div>
+
+<script src="js/include.js"></script>
+<script src="js/header.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const animatedItems = document.querySelectorAll(".reveal-up, .reveal-fade, .reveal-scale");
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.18
+    });
+
+    animatedItems.forEach((item) => revealObserver.observe(item));
+
+    const timelineTrack = document.getElementById("timelineTrack");
+    const timelineWrapper = document.querySelector(".timeline-scroll-wrapper");
+
+    if (!timelineTrack || !timelineWrapper) return;
+
+    fetch("js/timeline.json")
+        .then(response => response.json())
+        .then(events => {
+            timelineTrack.innerHTML = events.map((event) => `
+                <article class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-year">${event.year}</span>
+                        <p class="timeline-text">${event.text}</p>
+                    </div>
+                </article>
+            `).join("");
+
+            const timelineItems = Array.from(timelineTrack.querySelectorAll(".timeline-item"));
+
+            function updateTimelineItems() {
+                const wrapperRect = timelineWrapper.getBoundingClientRect();
+                const visibleStart = wrapperRect.left + wrapperRect.width * 0.10;
+                const visibleEnd = wrapperRect.left + wrapperRect.width * 0.90;
+                const visibleCenter = wrapperRect.left + wrapperRect.width / 2;
+                const halfVisibleRange = (visibleEnd - visibleStart) / 2;
+
+                timelineItems.forEach((item) => {
+                    const itemRect = item.getBoundingClientRect();
+                    const itemCenter = itemRect.left + itemRect.width / 2;
+                    const isInside = itemCenter >= visibleStart && itemCenter <= visibleEnd;
+
+                    if (isInside) {
+                        item.classList.add("is-visible");
+                    } else {
+                        item.classList.remove("is-visible");
+                        item.classList.remove("is-focus");
+                        item.style.opacity = "";
+                        item.style.transform = "";
+                        item.style.filter = "";
+                        return;
+                    }
+
+                    const distanceToCenter = Math.abs(itemCenter - visibleCenter);
+                    const proximity = Math.max(0, 1 - (distanceToCenter / halfVisibleRange));
+
+                    const scale = 0.92 + (proximity * 0.12);
+                    const opacity = 0.45 + (proximity * 0.55);
+                    let blur = 0;
+
+                    if (proximity < 0.25) {
+                        const edgeFactor = (0.25 - proximity) / 0.25;
+                        blur = edgeFactor * 0.5;
+                    }
+
+                    item.style.opacity = opacity.toFixed(3);
+                    item.style.transform = `scale(${scale.toFixed(3)})`;
+                    item.style.filter = `blur(${Math.max(0, blur).toFixed(2)}px)`;
+
+                    if (proximity > 0.72) {
+                        item.classList.add("is-focus");
+                    } else {
+                        item.classList.remove("is-focus");
+                    }
+                });
+            }
+
+            updateTimelineItems();
+
+            timelineWrapper.addEventListener("scroll", updateTimelineItems);
+            window.addEventListener("resize", updateTimelineItems);
+
+            timelineWrapper.addEventListener("wheel", function (e) {
+                if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                    e.preventDefault();
+                    timelineWrapper.scrollLeft += e.deltaY;
+                }
+            }, { passive: false });
+
+            const panelInner = timelineWrapper.closest('.story-panel-inner') || document;
+            const leftArrow = panelInner.querySelector('.timeline-arrow--left');
+            const rightArrow = panelInner.querySelector('.timeline-arrow--right');
+
+            function updateArrows() {
+                if (!leftArrow || !rightArrow) return;
+                leftArrow.disabled = timelineWrapper.scrollLeft <= 0;
+                rightArrow.disabled = timelineWrapper.scrollLeft + timelineWrapper.clientWidth >= timelineTrack.scrollWidth - 1;
+            }
+
+            if (leftArrow && rightArrow) {
+                leftArrow.addEventListener('click', () => {
+                    timelineWrapper.scrollBy({ left: -Math.round(timelineWrapper.clientWidth * 0.6), behavior: 'smooth' });
+                });
+
+                rightArrow.addEventListener('click', () => {
+                    timelineWrapper.scrollBy({ left: Math.round(timelineWrapper.clientWidth * 0.6), behavior: 'smooth' });
+                });
+
+                timelineWrapper.addEventListener('scroll', updateArrows);
+                window.addEventListener('resize', updateArrows);
+                setTimeout(updateArrows, 260);
+            }
+        })
+        .catch(error => {
+    console.error("Error cargando timeline.json:", error);
+
+    timelineTrack.innerHTML = `
+        <article class="timeline-item is-visible is-focus">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+                <span class="timeline-year">Historia</span>
+                <p class="timeline-text">No se ha podido cargar la línea temporal en este momento.</p>
+            </div>
+        </article>
+    `;
+});
+});
+</script>
+
+</body>
+</html>
