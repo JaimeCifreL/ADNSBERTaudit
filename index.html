@@ -1,0 +1,491 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/header_footer.css">
+    <link rel="stylesheet" href="styles/css.css">
+    <link rel="stylesheet" href="styles/mobile.css">
+    <title>ADN SBERT Audit — Auditoría y Consultoría en Palma de Mallorca | ADN SBERT</title>
+    <meta name="description" content="ADN SBERT Audit: auditoría, due diligence y consultoría en Palma de Mallorca. Servicios profesionales de auditoría y asesoramiento para empresas en Mallorca.">
+    <link rel="canonical" href="https://TU-DOMINIO/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "ADN SBERT Audit",
+            "url": "https://TU-DOMINIO/",
+            "telephone": "+34971760256",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "C/ Francisco Rover, 6, 2ª",
+                "addressLocality": "Palma de Mallorca",
+                "postalCode": "07003",
+                "addressCountry": "ES"
+            },
+            "sameAs": ["https://www.adngrm.com"]
+        }
+        </script>
+
+    <style>
+        /* ── Variables ── */
+        :root {
+            --blue:       #1140A6;
+            --blue-deep:  #071D54;
+            --blue-light: #2E5ED6;
+            --white:      #FFFFFF;
+            --off-white:  #F5F7FB;
+            --black:      #080C14;
+            --muted:      #4B5675;
+            --rule:       rgba(17, 64, 166, 0.18);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--off-white);
+            color: var(--black);
+        }
+
+        /* ── HERO ── */
+        .hero.hero-sequence {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            overflow: hidden;
+            padding: 0;
+            background: none;
+            margin-top: -50px;
+        }
+
+        .hero-bg-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-bg-layer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(7,29,84,0.72) 0%, rgba(7,29,84,0.48) 45%, rgba(17,64,166,0.22) 100%);
+            z-index: 1;
+        }
+
+        #dnaCanvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            opacity: 0.55;
+            mix-blend-mode: screen;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 3;
+            background:
+                radial-gradient(ellipse 60% 50% at 15% 75%, rgba(17,64,166,0.28), transparent),
+                radial-gradient(ellipse 40% 60% at 85% 20%, rgba(7,29,84,0.22), transparent);
+        }
+
+        .top-band {
+            display: block !important;
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 60%, transparent 100%);
+            z-index: 10;
+        }
+
+        .hero-sequence-content {
+            position: relative;
+            z-index: 4;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 0 8vw 9vh;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.62);
+            margin-bottom: 22px;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            display: block;
+            width: 32px; height: 1px;
+            background: var(--blue-light);
+        }
+
+        .hero-sequence-track {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            min-height: 300px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .hero-sequence-step {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            opacity: 0;
+            transform: translateY(20px);
+            filter: blur(6px);
+            transition: opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1), filter 1s ease;
+            pointer-events: none;
+        }
+        .hero-sequence-step.is-active  { opacity: 1; transform: none; filter: blur(0); pointer-events: auto; }
+        .hero-sequence-step.is-exit    { opacity: 0; transform: translateY(-12px); filter: blur(8px); }
+
+        .hero-sequence-title {
+            font-size: clamp(3rem, 7vw, 6.5rem);
+            text-align: left;
+            font-weight: 300;
+            line-height: 1.02;
+            letter-spacing: -0.02em;
+            color: var(--white);
+            max-width: 1960px;
+            margin: 0;
+            text-wrap: balance;
+            text-shadow: 0 2px 40px rgba(7,29,84,0.4);
+        }
+        .hero-sequence-step[data-step="0"] .hero-sequence-title { font-style: italic; font-weight: 400; }
+        .hero-sequence-step[data-step="1"] .hero-sequence-title { font-size: 90px; font-weight: 300; color: rgba(255,255,255,0.94); }
+        .hero-sequence-step--trust .hero-sequence-title { font-size: 90px; font-weight: 300; max-width: 1780px; }
+
+        .hero-sequence-logo-wrap { margin-top: 28px; }
+        .hero-sequence-logo--medium { width: 450px; filter: brightness(0) invert(1) drop-shadow(0 4px 24px rgba(0,0,0,0.3)); }
+
+        .hero-progress {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 36px;
+        }
+        .hero-progress-dot {
+            width: 28px; height: 2px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.25);
+            transition: background 0.4s ease, width 0.4s ease;
+        }
+        .hero-progress-dot.is-active { background: var(--white); width: 44px; }
+
+        /* ── CTA ── */
+        .footer-cta {
+            background: var(--white);
+            border-top: 1px solid var(--rule);
+            padding: 56px 8vw;
+            position: relative;
+            overflow: hidden;
+        }
+        .footer-cta::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--blue), transparent);
+        }
+        .footer-cta-content {
+            max-width: 1180px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+        }
+        .footer-cta-text h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1.8rem,3.2vw,2.8rem);
+            font-weight: 400;
+            font-style: italic;
+            letter-spacing: -0.02em;
+            color: var(--blue-deep);
+            margin: 0 0 10px;
+            line-height: 1.1;
+        }
+        .footer-cta-text p { font-family:  'Outfit', sans-serif; font-size: 0.98rem; color: var(--muted); margin: 0; line-height: 1.7; max-width: 480px; }
+        .footer-cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-width: 200px;
+            min-height: 52px;
+            padding: 0 28px;
+            border-radius: 4px;
+            background: var(--blue);
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 1px solid var(--blue);
+            box-shadow: 0 8px 28px rgba(17,64,166,0.22);
+            transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+            white-space: nowrap;
+        }
+        .footer-cta-button svg { width: 16px; height: 16px; transition: transform 0.22s ease; }
+        .footer-cta-button:hover { background: var(--blue-deep); border-color: var(--blue-deep); transform: translateY(-2px); box-shadow: 0 14px 36px rgba(17,64,166,0.28); }
+        .footer-cta-button:hover svg { transform: translateX(3px); }
+
+        /* ===================================================================
+           RESPONSIVE MOBILE
+           =================================================================== */
+        @media (max-width: 768px) {
+
+            /* Hero snaps full screen */
+            .hero.hero-sequence {
+                min-height: 100svh;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+            }
+
+            .hero-sequence-content {
+                padding: 0 24px calc(32px + env(safe-area-inset-bottom, 0px));
+                padding-bottom: max(32px, env(safe-area-inset-bottom, 32px));
+            }
+
+            .hero-eyebrow {
+                font-size: 0.66rem;
+                letter-spacing: 0.2em;
+                margin-bottom: 16px;
+            }
+            .hero-eyebrow::before { width: 22px; }
+
+            .hero-sequence-track { min-height: 160px; }
+
+            .hero-sequence-title { font-size: clamp(2.4rem,10.5vw,3.8rem); }
+            .hero-sequence-step[data-step="1"] .hero-sequence-title { font-size: clamp(1.7rem,7.5vw,2.6rem); }
+            .hero-sequence-step--trust .hero-sequence-title { font-size: clamp(2rem,9vw,3.2rem); }
+
+            .hero-sequence-logo--medium { width: clamp(120px,38vw,180px); }
+            .hero-progress { margin-top: 28px; }
+
+            /* Scroll caret */
+            .hero-scroll-caret {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 3px;
+                z-index: 5;
+                pointer-events: none;
+                animation: caretBounce 2.4s ease-in-out infinite;
+            }
+            .hero-scroll-caret-line {
+                width: 1px; height: 28px;
+                background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.45));
+            }
+            .hero-scroll-caret-nub {
+                width: 6px; height: 6px;
+                border-right: 1px solid rgba(255,255,255,0.45);
+                border-bottom: 1px solid rgba(255,255,255,0.45);
+                transform: rotate(45deg) translateY(-2px);
+            }
+            @keyframes caretBounce {
+                0%,100% { transform: translateX(-50%) translateY(0); opacity: 0.6; }
+                50%      { transform: translateX(-50%) translateY(5px); opacity: 1; }
+            }
+
+            /* CTA section — full height on mobile */
+            .footer-cta {
+                min-height: 100svh;
+                display: flex;
+                align-items: center;
+                padding: 64px 24px;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+            }
+            .footer-cta-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 32px;
+                width: 100%;
+            }
+            .footer-cta-text h2 { font-size: clamp(2rem, 9vw, 3rem); }
+            .footer-cta-text p  { font-size: 1rem; max-width: 100%; }
+            .footer-cta-button  { width: 100%; height: 56px; border-radius: 8px; font-size: 0.9rem; }
+
+            /* CTA decorative accent */
+            .footer-cta::after {
+                content: '';
+                position: absolute;
+                bottom: 0; left: 0; right: 0;
+                height: 1px;
+                background: linear-gradient(90deg, var(--blue), transparent);
+            }
+        }
+
+        /* Scroll snap on html for index page */
+        @media (max-width: 768px) {
+            html.index-snap {
+                scroll-snap-type: y mandatory;
+                scroll-behavior: smooth;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main" style="position:absolute;left:-9999px;top:auto">Saltar al contenido</a>
+    <div class="page-bg" aria-hidden="true"></div>
+    <div id="header"></div>
+
+    <main id="main">
+        <section class="hero hero-sequence">
+            <div class="top-band"></div>
+            <div class="hero-bg-layer"></div>
+            <canvas id="dnaCanvas" aria-hidden="true"></canvas>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-sequence-content">
+                <p class="hero-eyebrow">Auditoría · Consultoría · Confianza</p>
+
+                <div class="hero-sequence-track" id="heroSequenceTrack">
+                    <div class="hero-sequence-step is-active" data-step="0">
+                        <h1 class="hero-sequence-title">En nuestro ADN<br>está la calidad</h1>
+                    </div>
+                    <div class="hero-sequence-step" data-step="1">
+                        <h2 class="hero-sequence-title">Más de 35 años de experiencia en auditoría y consultoría nos avalan</h2>
+                    </div>
+                    <div class="hero-sequence-step hero-sequence-step--trust" data-step="2">
+                        <h2 class="hero-sequence-title">Generamos confianza en la sociedad</h2>
+                        <div class="hero-sequence-logo-wrap">
+                            <img src="styles/img/Logo_ADNSbert_Audit.png" alt="ADN SBERT AUDIT" class="hero-sequence-logo hero-sequence-logo--medium">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-progress" id="heroProgress">
+                    <div class="hero-progress-dot is-active"></div>
+                    <div class="hero-progress-dot"></div>
+                    <div class="hero-progress-dot"></div>
+                </div>
+            </div>
+
+            <!-- Mobile scroll hint -->
+            <div class="hero-scroll-caret" aria-hidden="true">
+                <div class="hero-scroll-caret-line"></div>
+                <div class="hero-scroll-caret-nub"></div>
+            </div>
+        </section>
+
+        <section class="footer-cta">
+            <div class="footer-cta-content">
+                <div class="footer-cta-text">
+                    <h2>Solicítanos más información</h2>
+                    <p>Estamos a su disposición para resolver cualquier consulta y concertar una reunión.</p>
+                </div>
+                <a href="contacto.html" class="footer-cta-button">
+                    <span>Solicitar información</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type":"Question","name":"¿Ofrecéis auditoría en Palma de Mallorca?","acceptedAnswer":{"@type":"Answer","text":"Sí. ADN SBERT Audit realiza auditorías financieras presenciales en Palma de Mallorca y servicios de assurance en toda la isla."}},
+            {"@type":"Question","name":"¿Cómo solicito una consultoría empresarial?","acceptedAnswer":{"@type":"Answer","text":"Contacte por teléfono al +34 971 760 256 o envíe un correo a auditoria@sbertauditores.com para concertar una reunión de consultoría empresarial en Mallorca."}},
+            {"@type":"Question","name":"¿Dónde está vuestra oficina en Palma?","acceptedAnswer":{"@type":"Answer","text":"Nuestra oficina está en C/ Francisco Rover, 6, 2ª, 07003 Palma de Mallorca."}}
+        ]
+    }
+    </script>
+
+    <script src="js/include.js" defer></script>
+    <script src="js/header.js" defer></script>
+
+    <!-- DNA Canvas -->
+    <script>
+    (function(){
+        const canvas = document.getElementById('dnaCanvas');
+        if(!canvas) return;
+        const isMobile = window.matchMedia('(max-width: 768px)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if(isMobile){ canvas.style.display='none'; return; }
+        const ctx = canvas.getContext('2d');
+        let w=0,h=0, t=0, animId=null;
+        const dpr = Math.min(window.devicePixelRatio||1,2);
+        const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        function resize(){ w=canvas.clientWidth||innerWidth; h=canvas.clientHeight||innerHeight; canvas.width=Math.floor(w*dpr); canvas.height=Math.floor(h*dpr); canvas.style.width=w+'px'; canvas.style.height=h+'px'; ctx.setTransform(dpr,0,0,dpr,0,0); }
+        function wave({amplitude,wavelength,speed,phase,colorA,colorB,yOffset,lineWidth,alpha=1}){
+            const g=ctx.createLinearGradient(0,0,w,0); g.addColorStop(0,colorA); g.addColorStop(1,colorB);
+            ctx.lineWidth=lineWidth; ctx.strokeStyle=g; ctx.globalAlpha=alpha; ctx.beginPath();
+            for(let x=0;x<=w;x+=2){ const y=yOffset+Math.sin((x/w)*Math.PI*wavelength+phase*speed)*amplitude; x===0?ctx.moveTo(x,y):ctx.lineTo(x,y); }
+            ctx.stroke(); ctx.globalAlpha=1;
+        }
+        function nodes({amplitude,wavelength,speed,phase,yOffset,every=180}){
+            for(let x=40;x<w;x+=every){
+                const y=yOffset+Math.sin((x/w)*Math.PI*wavelength+phase*speed)*amplitude;
+                ctx.beginPath(); ctx.arc(x,y,2.5,0,Math.PI*2); ctx.fillStyle='rgba(46,94,214,0.5)'; ctx.fill();
+                ctx.beginPath(); ctx.arc(x,y,9,0,Math.PI*2); ctx.fillStyle='rgba(46,94,214,0.06)'; ctx.fill();
+            }
+        }
+        function render(){
+            ctx.clearRect(0,0,w,h);
+            const by=h*0.66;
+            wave({amplitude:Math.max(14,h*.02),wavelength:2.1,speed:.42,phase:t+.4,colorA:'rgba(46,94,214,0.25)',colorB:'rgba(17,64,166,0.35)',yOffset:by-38,lineWidth:1,alpha:.6});
+            wave({amplitude:Math.max(22,h*.038),wavelength:1.8,speed:.55,phase:t,colorA:'rgba(80,130,255,0.55)',colorB:'rgba(17,64,166,0.80)',yOffset:by,lineWidth:1.8});
+            wave({amplitude:Math.max(28,h*.052),wavelength:1.45,speed:.22,phase:t+.8,colorA:'rgba(46,94,214,0.42)',colorB:'rgba(7,29,84,0.75)',yOffset:by+10,lineWidth:1.4,alpha:.9});
+            nodes({amplitude:Math.max(22,h*.038),wavelength:1.8,speed:.55,phase:t,yOffset:by,every:Math.max(110,Math.floor(w/8))});
+            if(!isReduced){ t+=.008; animId=requestAnimationFrame(render); }
+        }
+        window.addEventListener('resize',()=>{resize();if(animId)cancelAnimationFrame(animId);render();},{passive:true});
+        resize(); render();
+    })();
+    </script>
+
+    <!-- Hero sequence -->
+    <script>
+    document.addEventListener('DOMContentLoaded',function(){
+        const steps=Array.from(document.querySelectorAll('.hero-sequence-step'));
+        const dots=Array.from(document.querySelectorAll('.hero-progress-dot'));
+        if(!steps.length) return;
+        const baseTime=1400, perWord=320, trans=900;
+        function getDur(s){ return baseTime+(s.innerText||'').trim().split(/\s+/).length*perWord; }
+        function setActive(i){ steps.forEach((s,j)=>s.classList.toggle('is-active',j===i)); dots.forEach((d,j)=>d.classList.toggle('is-active',j===i)); }
+        function run(i){ const s=steps[i]; setActive(i); setTimeout(()=>{ s.classList.remove('is-active'); s.classList.add('is-exit'); setTimeout(()=>{ s.classList.remove('is-exit'); run((i+1)%steps.length); },trans); },getDur(s)); }
+        run(0);
+
+        /* Enable snap on mobile */
+        if(window.innerWidth <= 768){
+            document.documentElement.classList.add('index-snap');
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría | ADN SBERT Audit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="styles/header_footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #041636;
+            --primary-light: #062f6d;
+            --accent: #d9b46a;
+            --text: #1c2430;
+            --muted: #667085;
+            --bg: #f5f7fb;
+            --white: #ffffff;
+            --card-border: rgba(4, 22, 54, 0.10);
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+            font-family: 'Outfit', sans-serif;
+
+        }
+
+
+        .hero {
+            position: relative;
+            min-height: 560px;
+            padding: 180px 7vw 90px;
+            color: white;
+            background:
+                linear-gradient(135deg, rgba(4, 22, 54, 0.671), rgba(6, 47, 109, 0.527)),
+                url('styles/img/fondo_servicios.png') center center / cover no-repeat;
+            overflow: hidden;
+        }
+
+      
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 980px;
+        }
+
+        .hero h1 {
+            margin: 0 0 22px;
+            max-width: 840px;
+            font-size: clamp(2.5rem, 6vw, 5.2rem);
+            line-height: 1.04;
+            font-weight: 400;
+            letter-spacing: -0.05em;
+        }
+
+        .hero blockquote {
+            margin: 0 0 26px;
+            max-width: 880px;
+            font-size: clamp(1.15rem, 2vw, 1.55rem);
+            font-weight: 400;
+            color: rgba(255,255,255,0.92);
+        }
+
+        .hero p {
+            max-width: 950px;
+            margin: 0;
+            color: rgba(255,255,255,0.82);
+            font-size: 1.02rem;
+        }
+
+        .page-wrap {
+            max-width: 1200px;
+            margin: -55px auto 0;
+            padding: 0 24px 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .intro-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 34px;
+            box-shadow: 0 24px 70px rgba(4, 22, 54, 0.13);
+            border: 1px solid var(--card-border);
+            margin-bottom: 28px;
+        }
+
+        /* Carousel */
+        .carousel-outer {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .section-grid {
+            display: flex;
+            gap: 0;
+            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+
+        .service-card {
+            flex: 0 0 100%;
+            background: var(--white);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 14px 40px rgba(4, 22, 54, 0.08);
+            scroll-margin-top: 180px;
+        }
+
+        .carousel-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .carousel-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--card-border);
+            background: var(--white);
+            color: var(--primary);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(4,22,54,0.08);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        }
+
+        .carousel-btn:hover:not(:disabled) {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 6px 18px rgba(4,22,54,0.18);
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.35;
+            cursor: default;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(4,22,54,0.18);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.25s, transform 0.25s;
+        }
+
+        .carousel-dot.is-active {
+            background: var(--primary);
+            transform: scale(1.35);
+        }
+
+        .service-number {
+            display: inline-flex;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 18px;
+            background: rgba(217, 180, 106, 0.18);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .service-card h2 {
+            margin: 0 0 14px;
+            color: var(--primary);
+            font-size: 1.35rem;
+            line-height: 1.3;
+        }
+
+        .service-card p {
+            margin: 0 0 16px;
+            color: var(--muted);
+        }
+
+        .service-card ul {
+            margin: 16px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .service-card li {
+            position: relative;
+            padding-left: 24px;
+            margin: 10px 0;
+            color: #344054;
+        }
+
+        .service-card li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.72em;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+
+        .cta {
+            margin-top: 34px;
+            padding: 36px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .cta h2 { margin: 0 0 8px; }
+        .cta p { margin: 0; color: rgba(255,255,255,0.78); }
+        .cta a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 170px;
+            padding: 14px 22px;
+            border-radius: 999px;
+            color: var(--primary);
+            background: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media (max-width: 900px) {
+            .header-container { flex-direction: column; gap: 12px; padding: 16px 18px; }
+            .nav { display: flex; width: 100%; flex-direction: column; gap: 12px; margin-left: 0; }
+            .nav a, .nav-link-dropdown { width: 100%; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 8px; font-size: 1rem; }
+            .adngrm-logo { display: none; }
+            .dropdown-menu { display: none !important; }
+            .servicios-panel { position: static; min-width: 100%; grid-template-columns: 1fr; margin-top: 10px; }
+            .hero { padding-top: 250px; }
+            .cta { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+<div id="header"></div>
+
+<main>
+    <section class="hero" id="consultoria">
+        <div class="hero-content">
+            <h1>Consultoría</h1>
+            <blockquote>Ofrecemos soluciones integrales orientadas al éxito empresarial, acompañando a la dirección en la toma de decisiones estratégicas, financieras y organizativas.</blockquote>
+            <p>Nuestros servicios de consultoría combinan experiencia técnica, visión financiera y conocimiento empresarial para ayudar a las organizaciones a valorar negocios, analizar planes de viabilidad y reforzar sus procesos de dirección.</p>
+        </div>
+    </section>
+
+    <div class="page-wrap">
+        
+
+        <div class="carousel-outer">
+        <section class="section-grid" id="carouselTrack">
+            <article class="service-card" id="valoraciones">
+                <h2>Valoraciones de empresa</h2>
+                <p>Las valoraciones de empresa son una herramienta útil en diversas situaciones empresariales, patrimoniales y fiscales.</p>
+                <ul>
+                    <li>Operaciones de compraventa entre accionistas de una empresa.</li>
+                    <li>Reordenaciones accionariales en grupos de empresa.</li>
+                    <li>Ecuaciones de canje en fusiones.</li>
+                    <li>Herencias.</li>
+                    <li>Motivos fiscales.</li>
+                    <li>Paso previo a una operación de venta.</li>
+                </ul>
+                <p>Realizamos valoraciones independientes de sociedades, negocios y activos empresariales, partiendo de sus proyecciones económico-financieras, previamente analizadas o elaboradas conjuntamente con las empresas.</p>
+                <p>A partir de esta información, aplicamos diversas metodologías de valoración, destacando el descuento de flujos de caja. Posteriormente, contrastamos los resultados con referencias de mercado como múltiplos de compañías cotizadas o transacciones comparables.</p>
+            </article>
+
+            <article class="service-card" id="planes-viabilidad">
+                <h2>Planes de viabilidad y valoración de negocios</h2>
+                <p>Colaboramos con la Dirección en la evaluación de planes de negocio, revisando las hipótesis básicas de inversión y operación.</p>
+                <p>Comparamos los resultados de viabilidad con otros proyectos similares o con las expectativas de los inversores, aportando una visión objetiva y estructurada para facilitar la toma de decisiones.</p>
+            </article>
+
+            <article class="service-card" id="comites-direccion">
+                <h2>Participación en comités de dirección</h2>
+                <p>Ofrecemos asistencia técnica a nivel directivo, organizando la información clave y guiando en la toma de decisiones estratégicas.</p>
+                <p>También acompañamos en el seguimiento del cumplimiento de los planes operativos previamente aprobados, aportando criterio financiero, visión externa y soporte en la priorización de acciones.</p>
+            </article>
+        </section>
+        <div class="carousel-nav">
+            <button class="carousel-btn carousel-btn--prev" aria-label="Anterior" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="carousel-dots" id="carouselDots"></div>
+            <button class="carousel-btn carousel-btn--next" aria-label="Siguiente" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+        </div>
+        </div>
+
+        <section class="cta">
+            <div>
+                <h2>Consultoría con visión financiera y estratégica</h2>
+                <p>Acompañamos a la dirección en decisiones clave con análisis independiente, criterio técnico y enfoque práctico.</p>
+            </div>
+            <a href="contacto.html">Contactar</a>
+        </section>
+
+    </div>
+
+</main>
+            <div id="footer"></div>
+<script src="js/include.js"></script>
+<script src="js/header.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const header = document.getElementById("siteHeader");
+    const quienes = document.getElementById("dropdownQuienes");
+    const quienesToggle = document.getElementById("dropdownToggle");
+    const servicios = document.getElementById("dropdownServicios");
+    const serviciosToggle = document.getElementById("serviciosToggle");
+    const opciones = document.querySelectorAll(".servicio-opcion");
+    const contenidos = document.querySelectorAll(".subopciones-lista");
+
+    function isMobile() { return window.matchMedia("(max-width: 900px)").matches; }
+    function closeAllDropdowns() {
+        quienes?.classList.remove("open");
+        servicios?.classList.remove("open");
+        header?.classList.remove("servicios-open");
+    }
+
+    if (quienes && quienesToggle) {
+        function syncQuienesLink() { quienesToggle.setAttribute("href", isMobile() ? "empresa.html" : "#"); }
+        syncQuienesLink();
+        quienesToggle.addEventListener("click", function (e) {
+            if (isMobile()) return;
+            e.preventDefault();
+            const willOpen = !quienes.classList.contains("open");
+            closeAllDropdowns();
+            quienes.classList.toggle("open", willOpen);
+        });
+        window.addEventListener("resize", syncQuienesLink);
+    }
+
+    if (servicios && serviciosToggle) {
+        serviciosToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            const willOpen = !servicios.classList.contains("open");
+            closeAllDropdowns();
+            servicios.classList.toggle("open", willOpen);
+            header?.classList.toggle("servicios-open", willOpen);
+        });
+
+        opciones.forEach(function (opcion) {
+            opcion.addEventListener("click", function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const servicio = this.dataset.servicio;
+                opciones.forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+                contenidos.forEach(function (contenido) {
+                    contenido.classList.remove("active");
+                    if (contenido.dataset.contenido === servicio) contenido.classList.add("active");
+                });
+            });
+        });
+    }
+
+    document.addEventListener("click", function (e) {
+        if (!header || !header.contains(e.target)) closeAllDropdowns();
+    });
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeAllDropdowns();
+    });
+});
+</script>
+<script>
+(function () {
+    var track = document.getElementById('carouselTrack');
+    var dotsContainer = document.getElementById('carouselDots');
+    if (!track || !dotsContainer) return;
+
+    var cards = Array.from(track.querySelectorAll('.service-card'));
+    var total = cards.length;
+    var current = 0;
+
+    cards.forEach(function (_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Ir a diapositiva ' + (i + 1));
+        dot.addEventListener('click', function () { goTo(i); });
+        dotsContainer.appendChild(dot);
+    });
+
+    var dots = Array.from(dotsContainer.querySelectorAll('.carousel-dot'));
+    var prevBtn = document.querySelector('.carousel-btn--prev');
+    var nextBtn = document.querySelector('.carousel-btn--next');
+
+    function goTo(index) {
+        current = index;
+        track.style.transform = 'translateX(' + (-100 * current) + '%)';
+        dots.forEach(function (d, i) { d.classList.toggle('is-active', i === current); });
+        if (prevBtn) prevBtn.disabled = current === 0;
+        if (nextBtn) nextBtn.disabled = current === total - 1;
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { if (current > 0) goTo(current - 1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { if (current < total - 1) goTo(current + 1); });
+
+    goTo(0);
+})();
+</script>
+</body>
+</html>

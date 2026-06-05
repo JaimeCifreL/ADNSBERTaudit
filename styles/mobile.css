@@ -1,0 +1,151 @@
+﻿/* ============================================================
+   ADN SBERT AUDIT — Mobile Design System
+   Archivo: styles/mobile.css
+   ============================================================
+   Filosofía:
+   · Secciones como diapositivas (scroll-snap) donde el
+     contenido lo permite
+   · Tipografía que respira en pantalla pequeña
+   · Cero compromiso estético respecto al diseño desktop
+   ============================================================ */
+
+/* ── VARIABLES MÓVIL ── */
+:root {
+    --mob-header-h: 64px;
+    --mob-ease:     cubic-bezier(0.22, 1, 0.36, 1);
+    --mob-blue:     #041636;
+    --mob-accent:   #2E5ED6;
+    --mob-white:    #ffffff;
+}
+
+/* ── SCROLL SNAP (viewport como contenedor) ──────────────── */
+@media (max-width: 768px) {
+
+    /* Páginas que activan el modo diapositiva: 
+       añade class="snap-page" al <body> de la página */
+    html.snap-active {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+    }
+
+    /* Secciones diapositiva */
+    section.snap {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        min-height: 100svh;
+    }
+
+    /* Indicador de posición flotante (puntos laterales) */
+    .snap-indicator {
+        position: fixed;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 500;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    html.snap-active .snap-indicator {
+        opacity: 1;
+    }
+
+    .snap-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.35);
+        transition: background 0.3s ease, height 0.35s var(--mob-ease);
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+    .snap-dot.active {
+        background: rgba(255, 255, 255, 0.92);
+        height: 18px;
+    }
+
+    /* ── SCROLL CARET (scroll hint) ── */
+    .scroll-caret {
+        position: absolute;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        z-index: 10;
+        animation: caretBounce 2.4s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    .scroll-caret-line {
+        width: 1px;
+        height: 32px;
+        background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.55));
+    }
+
+    .scroll-caret-arrow {
+        width: 8px;
+        height: 8px;
+        border-right: 1px solid rgba(255,255,255,0.55);
+        border-bottom: 1px solid rgba(255,255,255,0.55);
+        transform: rotate(45deg) translateY(-3px);
+    }
+
+    @keyframes caretBounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.7; }
+        50%       { transform: translateX(-50%) translateY(6px); opacity: 1; }
+    }
+
+    /* ── HEADER OFFSET para secciones con padding-top ── */
+    section.snap,
+    section.mobile-full {
+        padding-top: var(--mob-header-h);
+        box-sizing: border-box;
+    }
+
+    /* Excepción: secciones hero que ya centran su contenido */
+    section.snap.hero-snap {
+        padding-top: 0;
+    }
+
+    /* ── TYPOGRAPHY GLOBAL MOBILE ── */
+    h1, h2, h3 {
+        letter-spacing: -0.03em;
+    }
+
+    /* ── SAFE BOTTOM AREA (notch / home bar) ── */
+    .snap-footer-safe {
+        padding-bottom: env(safe-area-inset-bottom, 16px);
+    }
+}
+
+
+/* ── ANIMACIÓN DE ENTRADA PARA SECCIONES SNAP ── */
+@media (max-width: 768px) {
+
+    /* Elemento que aparece al entrar en foco (usado con JS) */
+    .snap-reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+            opacity  0.7s var(--mob-ease),
+            transform 0.7s var(--mob-ease);
+    }
+
+    .snap-reveal.in-view {
+        opacity: 1;
+        transform: none;
+    }
+
+    .snap-reveal.delay-1 { transition-delay: 0.08s; }
+    .snap-reveal.delay-2 { transition-delay: 0.16s; }
+    .snap-reveal.delay-3 { transition-delay: 0.24s; }
+    .snap-reveal.delay-4 { transition-delay: 0.32s; }
+}

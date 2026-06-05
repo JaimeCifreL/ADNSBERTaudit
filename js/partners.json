@@ -1,0 +1,164 @@
+[
+  {
+    "name": "Antonio Mª Sbert Muntaner",
+    "image": "styles/img/empresa/miembro1.png",
+    "role": "Licenciado en Ciencias Económicas y Empresariales. Auditor de Cuentas inscrito en el ROAC y miembro del Instituto de Censores Jurados de Cuentas de España",
+    "alt": "Antonio Mª Sbert Muntaner",
+    "area": "direccion",
+    "mail": "tonisbert@sbertauditores.com"
+  },
+  {
+    "name": "Jaume Riutort Crespí",
+    "image": "styles/img/empresa/miembro4.png",
+    "role": "Licenciado en Ciencias Económicas y Empresariales. Auditor de Cuentas inscrito en el ROAC y miembro del Instituto de Censores Jurados de Cuentas de España",
+    "alt": "Jaume Riutort Crespí",
+    "area": "direccion",
+    "mail": "jriutort@sbertauditores.com"
+  },
+  {
+    "name": "Xavier Sánchez Ibáñez",
+    "image": "styles/img/empresa/miembro2.png",
+    "role": "Licenciado en Ciencias Económicas y Empresariales. Auditor de Cuentas inscrito en el ROAC y miembro del Instituto de Censores Jurados de Cuentas de España",
+    "alt": "Xavier Sánchez Ibáñez",
+    "area": "direccion",
+    "mail": "xsanchez@sbertauditores.com"
+  },
+  {
+    "name": "Miquel Ferrer Ferrer",
+    "image": "styles/img/empresa/miembro3.png",
+    "role": "Licenciado en Ciencias Económicas y Empresariales. Auditor de Cuentas inscrito en el ROAC y miembro del Instituto de Censores Jurados de Cuentas de España",
+    "alt": "Miquel Ferrer Ferrer",
+    "area": "direccion",
+    "mail": "mferrer@sbertauditores.com"
+  },
+  {
+    "name": "Juanmi Campaner Díaz",
+    "image": "styles/img/empresa/miembro18.png",
+    "role": "Licenciado en Ciencias Económicas y Empresariales. Auditor de Cuentas inscrito en el ROAC y miembro del Instituto de Censores Jurados de Cuentas de España",
+    "alt": "Juanmi Campaner Díaz",
+    "area": "auditoria",
+    "mail": "jcampaner@sbertauditores.com"
+  },
+  {
+    "name": "Daniel Ruiz Álvarez",
+    "image": "styles/img/empresa/miembro6.png",
+    "role": "Licenciado en Ciencias Económicas y Empresariales. Auditor de Cuentas inscrito en el ROAC y miembro del Instituto de Censores Jurados de Cuentas de España",
+    "alt": "Daniel Ruiz Álvarez",
+    "area": "auditoria",
+    "mail": "druiz@sbertauditores.com"
+  },
+  {
+    "name": "Celia Peralta Ruiz",
+    "image": "styles/img/empresa/miembro14.png",
+    "role": "",
+    "alt": "Celia Peralta Ruiz",
+    "area": "auditoria",
+    "mail": "cperalta@sbertauditores.com"
+  },
+  {
+    "name": "Pedro Pons Muntaner",
+    "image": "styles/img/empresa/miembro8.png",
+    "role": "",
+    "alt": "Pedro Pons Muntaner",
+    "area": "auditoria",
+    "mail": "ppons@sbertauditores.com"
+  },
+  {
+    "name": "Santiago Coloma Rotger",
+    "image": "styles/img/empresa/miembro16.png",
+    "role": "",
+    "alt": "Santiago Coloma Rotger",
+    "area": "auditoria",
+    "mail": "scoloma@sbertauditores.com"
+  },
+  {
+    "name": "Majo Cuenca Ferrer",
+    "image": "styles/img/empresa/miembro15.png",
+    "role": "",
+    "alt": "Majo Cuenca Ferrer",
+    "area": "auditoria",
+    "mail": "mcuenca@sbertauditores.com"
+  },
+  {
+    "name": "Juan Muñoz Vadell",
+    "image": "styles/img/empresa/miembro10.png",
+    "role": "",
+    "alt": "Juan Muñoz Vadell",
+    "area": "auditoria",
+    "mail": "jmunoz@sbertauditores.com"
+  },
+  {
+    "name": "Natalia Vidal Molina",
+    "image": "styles/img/empresa/miembro19.png",
+    "role": "",
+    "alt": "Natalia Vidal Molina",
+    "area": "auditoria",
+    "mail": "nvidal@sbertauditores.com"
+  },
+  {
+    "name": "Marga Forteza Manera",
+    "image": "styles/img/empresa/miembro7.png",
+    "role": "",
+    "alt": "Marga Forteza Manera",
+    "area": "auditoria",
+    "mail": "mforteza@sbertauditores.com"
+  },
+  {
+    "name": "Jaime Cifre Lliteras",
+    "image": "styles/img/empresa/miembro9.png",
+    "role": "Desarrollador Full Stack & Sistemas",
+    "alt": "Jaime Cifre Lliteras",
+    "area": "auditoria",
+    "mail": "jcifre@sbertauditores.com"
+  },
+  {
+    "name": "Judith ",
+    "image": "styles/img/empresa/miembro5.png",
+    "role": "",
+    "alt": "Judith ",
+    "area": "auditoria",
+    "mail": "auditoria@sbertauditores.com"
+  },
+  {
+    "name": "Mar Pascual Friedrich",
+    "image": "styles/img/empresa/miembro11.png",
+    "role": "",
+    "alt": "Mar Pascual Friedrich",
+    "area": "auditoria",
+    "mail": "mpascual@sbertauditores.com"
+  },
+
+  {
+    "name": "Mariset Delgado González",
+    "image": "styles/img/empresa/miembro20.png",
+    "role": "",
+    "alt": "Mariset Delgado González",
+    "area": "auditoria",
+    "mail": "mdelgado@sbertauditores.com"
+  },
+  {
+    "name": "Ismael Boya Calderón",
+    "image": "styles/img/empresa/miembro12.png",
+    "role": "",
+    "alt": "Ismael Boya Calderón",
+    "area": "auditoria",
+    "mail": "iboya@sbertauditores.com"
+  },
+  {
+    "name": "Nuria Paredes Burguera",
+    "image": "styles/img/empresa/miembro13.png",
+    "role": "",
+    "alt": "Nuria Paredes Burguera",
+    "area": "auditoria",
+    "mail": "nparedes@sbertauditores.com"
+  },
+  {
+    "name": "Cristina Pérez Medina",
+    "image": "styles/img/empresa/miembro17.png",
+    "role": "",
+    "alt": "Cristina Pérez Medina",
+    "area": "auditoria",
+    "mail": "cperez@sbertauditores.com"
+  }
+  
+]

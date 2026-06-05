@@ -1,0 +1,902 @@
+<header class="site-header" id="siteHeader" role="banner">
+    <div class="hdr-inner">
+
+        <!-- Logo -->
+        <a href="index.html" class="hdr-logo" aria-label="ADN SBERT Audit — inicio">
+            <img src="styles/img/logo_header.png" alt="ADN SBERT Audit" height="42" width="185">
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hdr-nav" id="hdrNav" aria-label="Navegación principal">
+
+            <!-- Quiénes somos -->
+            <div class="hdr-dd" id="ddQuienes">
+                <button class="hdr-dd-btn" type="button" aria-expanded="false" aria-haspopup="true">
+                    Quiénes somos
+                    <svg class="hdr-dd-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="hdr-dd-panel" role="menu">
+                    <a href="nuestra_firma.html" role="menuitem">Nuestra firma</a>
+                    <a href="profesionales.html" role="menuitem">Nuestros profesionales</a>
+                    <a href="historia.html" role="menuitem">Historia de la firma</a>
+                </div>
+            </div>
+
+            <!-- Servicios -->
+            <div class="hdr-dd hdr-dd--wide" id="ddServicios">
+                <button class="hdr-dd-btn" type="button" aria-expanded="false" aria-haspopup="true">
+                    Servicios
+                    <svg class="hdr-dd-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="hdr-dd-panel hdr-dd-panel--mega" role="menu">
+                    <div class="mega-col">
+                        <p class="mega-label">Auditoría &amp; Assurance</p>
+                        <a href="auditoria_assurance.html#auditoria-cuentas"   role="menuitem">Auditoría de cuentas</a>
+                        <a href="auditoria_assurance.html#sostenibilidad"       role="menuitem">Sostenibilidad</a>
+                        <a href="auditoria_assurance.html#sector-publico"       role="menuitem">Sector público</a>
+                        <a href="auditoria_assurance.html#due-diligence"        role="menuitem">Due diligence financiera</a>
+                        <a href="auditoria_assurance.html#informes-especiales"  role="menuitem">Informes especiales</a>
+                        <a href="auditoria_assurance.html#ayudas-subvenciones"  role="menuitem">Ayudas públicas y subvenciones</a>
+                        <a href="auditoria_assurance.html#forensic"             role="menuitem">Forensic</a>
+                    </div>
+                    <div class="mega-divider" aria-hidden="true"></div>
+                    <div class="mega-col">
+                        <p class="mega-label">Consultoría</p>
+                        <a href="consultoria.html#valoraciones"      role="menuitem">Valoraciones de empresa</a>
+                        <a href="consultoria.html#planes-viabilidad" role="menuitem">Planes de viabilidad</a>
+                        <a href="consultoria.html#comites-direccion" role="menuitem">Comités de dirección</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="trabaja_con_nosotros.html" class="hdr-nav-link">Trabaja con nosotros</a>
+        </nav>
+
+        <!-- ADN GRM -->
+        <div class="hdr-grm" aria-label="Miembros de ADN GRM">
+            <span>Miembros de</span>
+            <a href="https://www.adngrm.com" target="_blank" rel="noopener noreferrer">
+                <img src="styles/img/adngrm-white.png" alt="ADN GRM" height="36" width="148">
+            </a>
+        </div>
+
+        <!-- Hamburger -->
+        <button class="hdr-burger" id="hdrBurger" type="button"
+                aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+        </button>
+    </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MOBILE MENU — full-screen overlay
+     ═══════════════════════════════════════════════════════════ -->
+<div class="mob-menu" id="mobileMenu" role="dialog" aria-modal="true"
+     aria-label="Menú de navegación" aria-hidden="true">
+
+    <!-- Decorative blobs -->
+    <div class="mob-blob mob-blob--1" aria-hidden="true"></div>
+    <div class="mob-blob mob-blob--2" aria-hidden="true"></div>
+
+    <div class="mob-menu-inner">
+
+        <!-- Top bar inside overlay -->
+        <div class="mob-topbar">
+            <a href="index.html" class="mob-logo" tabindex="-1" aria-hidden="true">
+                <img src="styles/img/logo_header.png" alt="" height="32">
+            </a>
+            <button class="mob-close" id="mobClose" type="button" aria-label="Cerrar menú">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M18 6L6 18M6 6l12 12" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Primary nav links -->
+        <nav class="mob-nav" aria-label="Menú móvil">
+
+            <a href="index.html"               class="mob-primary-link" data-i="0">Inicio</a>
+
+            <!-- Accordion: Quiénes somos -->
+            <div class="mob-accordion" data-i="1">
+                <button class="mob-acc-btn" type="button" aria-expanded="false">
+                    <span>Quiénes somos</span>
+                    <svg class="mob-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="mob-acc-body" hidden>
+                    <a href="nuestra_firma.html"  class="mob-sub-link">Nuestra firma</a>
+                    <a href="profesionales.html"  class="mob-sub-link">Nuestros profesionales</a>
+                    <a href="historia.html"        class="mob-sub-link">Historia de la firma</a>
+                </div>
+            </div>
+
+            <!-- Accordion: Servicios -->
+            <div class="mob-accordion" data-i="2">
+                <button class="mob-acc-btn" type="button" aria-expanded="false">
+                    <span>Servicios</span>
+                    <svg class="mob-acc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="mob-acc-body" hidden>
+                    <p class="mob-sub-label">Auditoría &amp; Assurance</p>
+                    <a href="auditoria_assurance.html#auditoria-cuentas"  class="mob-sub-link">Auditoría de cuentas</a>
+                    <a href="auditoria_assurance.html#sostenibilidad"      class="mob-sub-link">Sostenibilidad</a>
+                    <a href="auditoria_assurance.html#sector-publico"      class="mob-sub-link">Sector público</a>
+                    <a href="auditoria_assurance.html#due-diligence"       class="mob-sub-link">Due diligence financiera</a>
+                    <a href="auditoria_assurance.html#informes-especiales" class="mob-sub-link">Informes especiales</a>
+                    <a href="auditoria_assurance.html#ayudas-subvenciones" class="mob-sub-link">Ayudas y subvenciones</a>
+                    <a href="auditoria_assurance.html#forensic"            class="mob-sub-link">Forensic</a>
+                    <p class="mob-sub-label" style="margin-top:14px">Consultoría</p>
+                    <a href="consultoria.html#valoraciones"       class="mob-sub-link">Valoraciones de empresa</a>
+                    <a href="consultoria.html#planes-viabilidad"  class="mob-sub-link">Planes de viabilidad</a>
+                    <a href="consultoria.html#comites-direccion"  class="mob-sub-link">Comités de dirección</a>
+                </div>
+            </div>
+
+            <a href="trabaja_con_nosotros.html" class="mob-primary-link" data-i="3">Trabaja con nosotros</a>
+        </nav>
+
+        <!-- Bottom contact strip -->
+        <div class="mob-footer" data-i="4">
+            <a href="contacto.html" class="mob-footer-cta">Contacto</a>
+            <a href="tel:+34971760256" class="mob-footer-tel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.11 4.18 2 2 0 0 1 4.09 2h3a2 2 0 0 1 2 1.72c.12.9.37 1.78.72 2.61a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.47-1.27a2 2 0 0 1 2.11-.45c.83.35 1.71.6 2.61.72A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                +34 971 760 256
+            </a>
+            <a href="https://www.adngrm.com" target="_blank" rel="noopener noreferrer" class="mob-footer-grm">
+                <span>Miembros de</span>
+                <img src="styles/img/adngrm-white.png" alt="ADN GRM" height="26">
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   TOKENS
+   ═══════════════════════════════════════════════════════════════ */
+:root {
+    --h-bg:        linear-gradient(135deg, #041636 0%, #072d6a 100%);
+    --h-bg-scroll: linear-gradient(135deg, #030f24 0%, #061e4a 100%);
+    --h-height:    78px;
+    --h-height-sm: 64px;
+    --h-ease:      cubic-bezier(0.22, 1, 0.36, 1);
+    --h-blue:      #1140a6;
+    --h-accent:    #3d6ef5;
+    --h-white:     #ffffff;
+
+    /* Mob menu */
+    --mob-bg: #040e22;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SITE HEADER
+   ═══════════════════════════════════════════════════════════════ */
+.site-header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 900;
+    height: var(--h-height);
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0), 0 8px 32px rgba(0, 0, 0, 0);
+    transition:
+        height      .32s var(--h-ease),
+        background  .32s ease,
+        box-shadow  .32s ease,
+        transform   .32s ease;
+}
+
+.site-header.scrolled {
+    height: var(--h-height-sm);
+    background: var(--h-bg-scroll);
+    box-shadow: 0 1px 0 rgba(255,255,255,.04), 0 12px 40px rgba(0,0,0,.28);
+}
+
+.site-header.header-hidden {
+    transform: translateY(-110%);
+}
+
+.hdr-inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 clamp(20px, 4vw, 48px);
+    gap: 0;
+}
+
+/* ── Logo ── */
+.hdr-logo {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+.hdr-logo img {
+    height: clamp(34px, 4.4vw, 50px);
+    width: auto;
+    transition: height .32s var(--h-ease);
+}
+.site-header.scrolled .hdr-logo img { height: clamp(30px, 3.8vw, 42px); }
+
+/* ── Desktop nav ── */
+.hdr-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(18px, 2.5vw, 40px);
+    margin-left: clamp(28px, 5vw, 88px);
+}
+
+.hdr-nav-link,
+.hdr-dd-btn {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,.88);
+    font-size: 1.5rem;
+    font-weight: 200;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    transition: color .2s ease;
+}
+
+.hdr-nav-link::after,
+.hdr-dd-btn::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -4px;
+    height: 1px;
+    background: var(--h-white);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .28s var(--h-ease);
+}
+
+.hdr-nav-link:hover,
+.hdr-dd-btn:hover {
+    color: var(--h-white);
+}
+.hdr-nav-link:hover::after,
+.hdr-dd-btn:hover::after,
+.hdr-dd.open .hdr-dd-btn::after {
+    transform: scaleX(1);
+}
+.hdr-dd.open .hdr-dd-btn { color: var(--h-white); }
+
+.hdr-dd-chevron {
+    width: 14px; height: 14px;
+    transition: transform .26s var(--h-ease);
+    flex-shrink: 0;
+}
+.hdr-dd.open .hdr-dd-chevron { transform: rotate(180deg); }
+
+/* CTA pill */
+.hdr-nav-cta {
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.18);
+    color: var(--h-white);
+    font-size: clamp(.78rem, 1vw, .92rem);
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 9px 20px;
+    border-radius: 999px;
+    transition: background .22s ease, border-color .22s ease;
+    white-space: nowrap;
+}
+.hdr-nav-cta:hover {
+    background: rgba(255,255,255,.18);
+    border-color: rgba(255,255,255,.35);
+}
+
+/* ── Dropdown panels ── */
+.hdr-dd { position: relative; }
+
+.hdr-dd-panel {
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 0;
+    min-width: 220px;
+    background: #0b1e44;
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px) scale(.98);
+    transform-origin: top left;
+    transition: opacity .22s ease, visibility .22s ease, transform .22s var(--h-ease);
+    z-index: 10;
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+.hdr-dd.open .hdr-dd-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.hdr-dd-panel a {
+    display: block;
+    color: rgba(255,255,255,.78);
+    text-decoration: none;
+    font-size: .97rem;
+    font-weight: 400;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: color .18s ease, background .18s ease;
+}
+.hdr-dd-panel a:hover {
+    color: var(--h-white);
+    background: rgba(255,255,255,.08);
+}
+
+/* Mega panel */
+.hdr-dd-panel--mega {
+    min-width: 520px;
+    display: flex;
+    gap: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(6px) scale(.98);
+    transform-origin: top center;
+}
+.hdr-dd.open .hdr-dd-panel--mega {
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.mega-col { flex: 1; padding: 4px; }
+.mega-label {
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.32);
+    padding: 10px 14px 6px;
+    margin: 0;
+}
+.mega-divider {
+    width: 1px;
+    background: rgba(255,255,255,.07);
+    margin: 8px 0;
+    flex-shrink: 0;
+}
+
+/* ── ADN GRM badge ── */
+.hdr-grm {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+}
+.hdr-grm span {
+    font-size: .68rem;
+    font-weight: 400;
+    color: rgba(255,255,255,.38);
+    text-align: center;
+    line-height: 1;
+}
+.hdr-grm img { height: 38px; width: auto; opacity: .9; }
+
+/* ── Burger (desktop: hidden) ── */
+.hdr-burger { display: none; }
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE  ≤ 900 px
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+
+    .site-header { height: 60px; }
+    .site-header.scrolled { height: 52px; }
+
+    .hdr-inner { padding: 0 18px; }
+
+    .hdr-nav  { display: none; }
+    .hdr-grm  { display: none; }
+
+    /* Burger */
+    .hdr-burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px; height: 44px;
+        margin-left: auto;
+        flex-shrink: 0;
+        border: none;
+        background: rgba(255,255,255,.08);
+        border-radius: 10px;
+        cursor: pointer;
+        padding: 12px;
+        transition: background .2s ease;
+    }
+    .hdr-burger:hover { background: rgba(255,255,255,.14); }
+
+    .burger-bar {
+        display: block;
+        width: 100%; height: 1.5px;
+        background: var(--h-white);
+        border-radius: 2px;
+        transform-origin: center;
+        transition: transform .32s var(--h-ease), opacity .22s ease;
+    }
+
+    /* × animation when open */
+    .hdr-burger.is-open .burger-bar:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hdr-burger.is-open .burger-bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hdr-burger.is-open .burger-bar:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE MENU — overlay
+   ═══════════════════════════════════════════════════════════════ */
+.mob-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 890;
+    background: var(--mob-bg);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    /* Hidden state */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    clip-path: circle(0% at calc(100% - 40px) 30px);
+    transition:
+        opacity      .42s var(--h-ease),
+        visibility   .42s ease,
+        clip-path    .52s var(--h-ease);
+}
+
+.mob-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    clip-path: circle(150% at calc(100% - 40px) 30px);
+}
+
+/* Decorative blobs */
+.mob-blob {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform;
+}
+.mob-blob--1 {
+    width: 55vw; height: 55vw;
+    background: radial-gradient(circle, rgba(17,64,166,.20) 0%, transparent 70%);
+    top: -10vw; right: -10vw;
+    animation: blobFloat 8s ease-in-out infinite alternate;
+}
+.mob-blob--2 {
+    width: 45vw; height: 45vw;
+    background: radial-gradient(circle, rgba(0,120,255,.12) 0%, transparent 70%);
+    bottom: 5vw; left: -8vw;
+    animation: blobFloat 11s ease-in-out infinite alternate-reverse;
+}
+@keyframes blobFloat {
+    from { transform: translate(0,0) scale(1); }
+    to   { transform: translate(8px,12px) scale(1.06); }
+}
+
+/* Inner scroll area */
+.mob-menu-inner {
+    position: relative;
+    z-index: 1;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 env(safe-area-inset-bottom, 24px);
+}
+
+/* ── Top bar ── */
+.mob-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px 14px 20px;
+    height: 60px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    flex-shrink: 0;
+}
+.mob-logo img { height: 30px; opacity: .75; }
+
+.mob-close {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+    background: rgba(255,255,255,.05);
+    cursor: pointer;
+    transition: background .2s ease;
+}
+.mob-close:hover { background: rgba(255,255,255,.12); }
+.mob-close svg { width: 18px; height: 18px; color: rgba(255,255,255,.75); }
+
+/* ── Primary nav ── */
+.mob-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+}
+
+/* Entry animation via CSS vars set by JS */
+.mob-primary-link,
+.mob-accordion {
+    opacity: 0;
+    transform: translateX(20px);
+    transition:
+        opacity   .48s var(--h-ease),
+        transform .48s var(--h-ease);
+}
+.mob-menu.is-open .mob-primary-link,
+.mob-menu.is-open .mob-accordion {
+    opacity: 1;
+    transform: none;
+}
+
+/* Stagger by data-i */
+.mob-menu.is-open [data-i="0"] { transition-delay: .08s; }
+.mob-menu.is-open [data-i="1"] { transition-delay: .13s; }
+.mob-menu.is-open [data-i="2"] { transition-delay: .18s; }
+.mob-menu.is-open [data-i="3"] { transition-delay: .23s; }
+.mob-menu.is-open [data-i="4"] { transition-delay: .28s; }
+
+.mob-primary-link {
+    display: block;
+    color: rgba(255,255,255,.90);
+    text-decoration: none;
+    font-size: 1.55rem;
+    font-weight: 300;
+    letter-spacing: -.025em;
+    padding: 13px 24px;
+    border-bottom: 1px solid rgba(255,255,255,.055);
+    transition:
+        color .18s ease,
+        padding-left .22s ease,
+        opacity .48s var(--h-ease),
+        transform .48s var(--h-ease);
+}
+.mob-primary-link:hover {
+    color: var(--h-white);
+    padding-left: 32px;
+}
+
+/* ── Accordion ── */
+.mob-accordion {
+    border-bottom: 1px solid rgba(255,255,255,.055);
+}
+
+.mob-acc-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: none;
+    border: none;
+    color: rgba(255,255,255,.90);
+    font-size: 1.55rem;
+    font-weight: 300;
+    letter-spacing: -.025em;
+    text-align: left;
+    padding: 13px 24px;
+    cursor: pointer;
+    transition: color .18s ease, padding-left .22s ease;
+}
+.mob-acc-btn:hover { color: var(--h-white); padding-left: 32px; }
+
+.mob-acc-icon {
+    width: 22px; height: 22px;
+    flex-shrink: 0;
+    opacity: .45;
+    transition: transform .3s var(--h-ease), opacity .2s ease;
+}
+.mob-acc-btn[aria-expanded="true"] .mob-acc-icon {
+    transform: rotate(180deg);
+    opacity: .75;
+}
+
+.mob-acc-body {
+    padding: 0 24px 14px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.mob-acc-body[hidden] { display: none; }
+
+.mob-sub-label {
+    font-size: .64rem;
+    font-weight: 700;
+    letter-spacing: .20em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.28);
+    margin: 10px 0 6px;
+    padding-left: 2px;
+}
+
+.mob-sub-link {
+    display: block;
+    color: rgba(255,255,255,.58);
+    text-decoration: none;
+    font-size: .95rem;
+    font-weight: 400;
+    padding: 9px 12px;
+    border-radius: 8px;
+    transition: color .18s ease, background .18s ease;
+}
+.mob-sub-link:hover {
+    color: var(--h-white);
+    background: rgba(255,255,255,.06);
+}
+
+/* ── Bottom footer strip ── */
+.mob-footer {
+    margin-top: auto;
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding: 20px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .45s ease, transform .45s ease;
+}
+.mob-menu.is-open .mob-footer {
+    opacity: 1;
+    transform: none;
+}
+
+.mob-footer-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    border-radius: 10px;
+    background: rgba(61,110,245,.22);
+    border: 1px solid rgba(61,110,245,.40);
+    color: var(--h-white);
+    text-decoration: none;
+    font-size: .95rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    transition: background .22s ease, border-color .22s ease;
+}
+.mob-footer-cta:hover {
+    background: rgba(61,110,245,.35);
+    border-color: rgba(61,110,245,.65);
+}
+
+.mob-footer-tel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,.5);
+    text-decoration: none;
+    font-size: .88rem;
+    font-weight: 400;
+    transition: color .18s ease;
+}
+.mob-footer-tel:hover { color: rgba(255,255,255,.8); }
+.mob-footer-tel svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+.mob-footer-grm {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: rgba(255,255,255,.25);
+    font-size: .7rem;
+    font-weight: 400;
+}
+.mob-footer-grm img { opacity: .35; }
+.mob-footer-grm:hover img { opacity: .5; }
+@media (max-width: 900px) {
+    .mob-menu {
+        z-index: 2000;
+    }
+
+    .site-header.menu-open {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .mob-topbar {
+        height: 76px;
+        padding: 16px 28px;
+    }
+
+    .mob-logo img {
+        height: 42px;
+        max-width: 220px;
+        object-fit: contain;
+    }
+
+    .mob-close {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+        border-radius: 14px;
+        background: rgba(255,255,255,.12);
+    }
+
+    .mob-close svg {
+        width: 26px;
+        height: 26px;
+    }
+}
+</style>
+
+<script>
+(function () {
+    /* ── Elements ── */
+    const header  = document.getElementById('siteHeader');
+    const burger  = document.getElementById('hdrBurger');
+    const menu    = document.getElementById('mobileMenu');
+    const closeBtn= document.getElementById('mobClose');
+    const dds     = document.querySelectorAll('.hdr-dd');
+    const accBtns = document.querySelectorAll('.mob-acc-btn');
+
+    /* ══════════════════════════════════════════════
+       SCROLL — hide/show + scrolled class
+       ══════════════════════════════════════════════ */
+    let lastY = 0, ticking = false;
+
+    window.addEventListener('scroll', function () {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function () {
+            const y = window.scrollY;
+            header.classList.toggle('scrolled', y > 24);
+            // hide on scroll-down, show on scroll-up
+            if (y > lastY + 8 && y > 120) {
+                header.classList.add('header-hidden');
+            } else if (y < lastY - 4) {
+                header.classList.remove('header-hidden');
+            }
+            lastY = y;
+            ticking = false;
+        });
+    }, { passive: true });
+
+    /* ══════════════════════════════════════════════
+       DESKTOP DROPDOWNS
+       ══════════════════════════════════════════════ */
+    function closeAllDD() {
+        dds.forEach(function (dd) {
+            dd.classList.remove('open');
+            const btn = dd.querySelector('.hdr-dd-btn');
+            if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+    }
+
+    dds.forEach(function (dd) {
+        const btn = dd.querySelector('.hdr-dd-btn');
+        if (!btn) return;
+
+        btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const isOpen = dd.classList.contains('open');
+            closeAllDD();
+            if (!isOpen) {
+                dd.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    document.addEventListener('click', closeAllDD);
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAllDD();
+    });
+
+    /* ══════════════════════════════════════════════
+       MOBILE MENU open / close
+       ══════════════════════════════════════════════ */
+    function openMenu() {
+        menu.classList.add('is-open');
+        menu.setAttribute('aria-hidden', 'false');
+
+        header.classList.add('menu-open');
+
+        burger.classList.add('is-open');
+        burger.setAttribute('aria-expanded', 'true');
+        burger.setAttribute('aria-label', 'Cerrar menú');
+
+        document.body.style.overflow = 'hidden';
+
+        setTimeout(function () {
+            closeBtn && closeBtn.focus();
+        }, 80);
+    }
+
+    function closeMenu() {
+        menu.classList.remove('is-open');
+        menu.setAttribute('aria-hidden', 'true');
+
+        header.classList.remove('menu-open');
+
+        burger.classList.remove('is-open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.setAttribute('aria-label', 'Abrir menú');
+
+        document.body.style.overflow = '';
+    }
+
+    burger && burger.addEventListener('click', function () {
+        if (menu.classList.contains('is-open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+    closeBtn && closeBtn.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.classList.contains('is-open')) closeMenu();
+    });
+
+    /* Close when any nav link is tapped */
+    menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', closeMenu);
+    });
+
+    /* ══════════════════════════════════════════════
+       MOBILE ACCORDIONS
+       ══════════════════════════════════════════════ */
+    accBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            const body = btn.nextElementSibling;
+            if (body) body.hidden = expanded;
+        });
+    });
+
+    // Fallback: delegated click handler to ensure the mobile close button works
+    // (addresses cases where the direct handler wasn't attached due to insertion timing)
+    document.addEventListener('click', function (e) {
+        try {
+            const clickedClose = e.target && (e.target.id === 'mobClose' || e.target.closest && e.target.closest('#mobClose'));
+            if (!clickedClose) return;
+            const menuEl = document.getElementById('mobileMenu');
+            const burgerEl = document.getElementById('hdrBurger');
+            if (menuEl) {
+                menuEl.classList.remove('is-open');
+                menuEl.setAttribute('aria-hidden', 'true');
+            }
+            if (burgerEl) {
+                burgerEl.classList.remove('is-open');
+                burgerEl.setAttribute('aria-expanded', 'false');
+                burgerEl.setAttribute('aria-label', 'Abrir menú');
+                try { burgerEl.focus(); } catch (e) {}
+            }
+            document.body.style.overflow = '';
+        } catch (err) {
+            // fail silently
+        }
+    });
+})();
+</script>

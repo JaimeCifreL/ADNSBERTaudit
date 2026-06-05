@@ -1,0 +1,72 @@
+﻿/* Landing pages common styles */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap');
+
+:root{
+  --blue: #1140A6;
+  --blue-deep: #071D54;
+  --muted: #4B5675;
+  --white: #ffffff;
+  --bg: #f5f7fb;
+  --text: #081226;
+}
+
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+
+.page-content{
+  max-width: 980px;
+  margin: 56px auto;
+  padding: 32px 20px;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(4,22,54,0.06);
+}
+
+.page-content h1{
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  color: var(--blue-deep);
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+  margin: 0 0 14px 0;
+}
+
+.page-content h2{
+  font-size: 1.12rem;
+  color: var(--blue);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.page-content p{
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0 0 12px 0;
+}
+
+.page-content ul{
+  margin: 0 0 16px 20px;
+}
+
+.page-content a{
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+.btn-cta{
+  display: inline-block;
+  background: var(--blue);
+  color: var(--white);
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 780px){
+  .page-content{ margin: 28px 14px; padding: 22px; }
+  .page-content h1{ font-size: clamp(1.6rem,6vw,2.2rem); }
+}
