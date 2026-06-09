@@ -784,7 +784,7 @@ h1, h2, h3 {
 }
 .footer-brand-logos img {
     padding: 12px;
-    background: rgba(255, 255, 255, 0.521);
+    background: rgba(255, 255, 255, 0.795);
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
     border-radius: 12px;
